@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+        /* 
+            의사(Pseudo, 가상, 유사) 클래스 -> (:)
+
+            a:link - 방문전: 파란색
+            a:visited - 방문후: 보라색
+            선택자:hover - 올린경우: 파란색
+            선택자:active - 눌린경우: 빨간색
+
+            :link -> :visited -> :hover -> :active 순으로 기록해야한다.
+        */
+
+
+        /* a:link{color: red;}
+        a:visited{color: orange;}
+        a:hover{color: yellow;}
+        a:active{color: green;} */
+
+        a{color:#999; text-decoration: none;}
+        a:hover{color:#111; text-decoration: underline;}
+
+        
+        #p1:hover{color: red; text-decoration: underline; cursor: pointer; font-size: 1.2rem;}
+        #p2:hover{color: orange; text-decoration: underline; cursor: pointer; font-size: 1.5rem;}
+        #p3:hover{color: blue; text-decoration: underline; cursor: pointer; font-size: 1.8rem;} 
+     
+    </style>
+</head>
+<body>
+    <h1>의사 클래스 선택자</h1>
+    <a href="#">링크1</a>
+    <a href="#">링크2</a>
+    <a href="https://naver.com"><img src="../assets/naver.png" alt="naver"></a>
+    <a href="#"><img src="../assets/google.png" alt="google"></a>
+
+    <!-- ctrl+alt+shift+위/아래방향키 : 다중커서 -->
+    <!-- ctrl+alt+위/아래방향키 : 다중커서 -->
+    <p id="p1">마우스 올려봐!~ 나는 빨강색이다.</p>
+    <p id="p2">마우스 올려봐!~ 나는 주황색이다.</p>
+    <p id="p3">마우스 올려봐!~ 나는 파란색이다.</p>
+</body>
+</html>
