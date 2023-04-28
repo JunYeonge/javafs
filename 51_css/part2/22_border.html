@@ -12,24 +12,80 @@
             margin: 20px;
         }
         /* 
+
+            border-top-width
+            border-width-top(x)
+
+            border-top-width
+            border-right-width
+            border-bottom-width
+            border-left-width
+
+            border-top-style
+            border-right-style
+            border-bottom-style
+            border-left-style
+
+            border-top-color
+            border-right-color
+            border-bottom-color
+            border-left-color
+
+            
+            border-width : 굵기;
+            border-style : 종류;
+            border-color : 색;
+
+            border-top
+            border-right
+            border-bottom
+            border-left
+
+            (속기형)
             border:[두께] 스타일 [색];
             색을 생략하면 글자색
             글자색을 지정하지 않으면 검정
+
+            dotted - 점선
+            dashed 
+            double
+
         */
 
         /* (1) .b1에 위쪽 테두리를 1px solid red로 지정하시오. */
+        .b1{
+            border-top-width: 1px;
+            border-top-style: solid;
+            border-top-color: #f00;
+
+            border-top: 1px solid #f00;
+        }
 
 
         /* (2) .b2에 오른쪽 테두리를 1px solid red로 지정하시오. */
+        .b2{
+            border-right: 1px solid red;
+        }
 
 
         /* (3) .b3에 아래쪽 테두리를 1px solid red로 지정하시오. */
+        .b3{
+            border-bottom: 1px solid #f00;
+        }
 
 
         /* (4) .b4에 왼쪽 테두리를 1px solid red로 지정하시오. */
+        .b4{
+            /* border-left: 1px solid #f00; */
+            border-style: solid dotted dashed double;
+            border-color:red blue violet deeppink;
+        }
 
 
         /* (5) .b5에 테두리를 1px solid red로 지정하시오. */
+        .b5{
+            border: 1px solid red;
+        }
 
 
         
