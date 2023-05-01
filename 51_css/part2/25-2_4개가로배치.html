@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+        /* 자식이 float 되면, 부모의 높이가 0 */
+        *{
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-left: 0;
+            /* 마커 제거 */
+            list-style: none;
+        }
+        .wrap{
+            background: hotpink;
+            /* 가로 가운데 */
+            width: 1500px;
+            /* height: 500px; */
+            margin: 0 auto;  
+            overflow: hidden;
+        }
+        li {
+            float:left;
+            width:360px;
+            height:240px;
+            background: violet;
+            margin-right: 20px;
+        }
+        .mr0{
+            margin-right: 0;
+        }
+
+        /* 
+            float: left|right|none
+            clear: left|right|both; -> float의 영향을 받지 않게 한다. 
+        */
+
+    </style>
+</head>
+<body>
+    <h1>플로트</h1>
+    <div class="wrap">
+        <ul>
+            <li>박스1</li>
+            <li>박스2</li>
+            <li>박스3</li>
+            <li class="mr0">박스4</li>
+        </ul>
+    </div>
+</body>
+</html>
