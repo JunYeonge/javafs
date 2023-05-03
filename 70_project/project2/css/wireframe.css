@@ -20,6 +20,7 @@ li{
 }
 /* header */
 header{
+    border: 1px solid #000;
     position: fixed;
     top: 0px;
     z-index: 99999;
@@ -39,6 +40,7 @@ nav li{
 }
 /* section common */
 section{
+    border: 1px solid #000;
     width: 1496px;
     margin: 0 auto;
 }
@@ -54,11 +56,17 @@ section{
     margin-bottom: 48px;
 }
 /* section1 */
-#maim_img{
+#main_img{
     position: relative;
+}
+#main_img b{
+    border: 1px solid #000;
+    padding: 4px 16px;
+    text-align: center;
 }
 #main_img h2{
     position: absolute;
+    border: 1px solid black;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -70,8 +78,14 @@ section{
     margin-bottom: 48px;
 }
 #menu h3{
+    border: 1px solid #000;
+    border-top: none;
     position: absolute;
     background: oldlace;
+    padding: 8px;
+}
+#menu img{
+    border: 1px solid blue;
 }
 /* section2, 3 common */
 #menu li, #event li {
@@ -88,7 +102,8 @@ section{
 } */
 
 #menu li:not(:nth-of-type(4n)), #event li:not(:nth-of-type(4n)){
-    margin-right: 16px;
+    margin-right: 8px;
+    padding: 0 0 0 8px;
 }
 
 /* section3 */
@@ -107,20 +122,24 @@ section{
     margin-top: 16px;
 }
 /* section4 */
+#news{
+    border-top: none;
+}
 #news input{
     display: block;
     width: 100%;
     height: 50px;
     padding: 0px 16px;
     margin-top: 16px;
-    border-radius: 3px;
+    border: 1px solid #000;
+    border-right :none;
+    border-left: none;
 }
 
 #news button{
     background:hotpink;
-    width: auto;
-    height: 50px;
-    margin: 16px 0;
+    padding: 16px;
+    margin: 24px 0;
 }
 
 /* footer */
