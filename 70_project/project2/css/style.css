@@ -1,8 +1,8 @@
-@charset "utf-8";
-
+@charset "utf-8";  
+@import url(reset.css);
+@import url(typo.css);
 /* header */
 header{
-    border: 1px solid #000;
     position: fixed;
     top: 0px;
     z-index: 99999;
@@ -10,6 +10,7 @@ header{
     height: 54px;
     padding: 0 32px;
     background: lavenderblush;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.16);
 }
 .logo{
     float: left;
@@ -22,7 +23,6 @@ nav li{
 }
 /* section common */
 section{
-    border: 1px solid #000;
     width: 1496px;
     margin: 0 auto;
 }
@@ -35,16 +35,11 @@ section{
     border-bottom: 1px solid #ccc;
 }
 .section h2 + p{
-    margin-bottom: 48px;
+    margin-bottom: 32px;
 }
 /* section1 */
 #main_img{
     position: relative;
-}
-#main_img b{
-    border: 1px solid #000;
-    padding: 4px 16px;
-    text-align: center;
 }
 #main_img h2{
     position: absolute;
@@ -53,8 +48,16 @@ section{
     top: 50%;
     transform: translate(-50%, -50%);
     background: lightcoral;
-    padding: 8px 24px;
+    /* padding: 8px 24px; */
 }
+#main_img b{
+    border: 1px solid #000;
+    padding: 4px 16px;
+    text-align: center;
+}
+/* #main_img h2 b{
+    margin-left: ;
+} */
 /* section2 */
 #menu h2{
     margin-bottom: 48px;
@@ -102,9 +105,7 @@ section{
     margin-top: 16px;
 }
 /* section4 */
-#news{
-    border-top: none;
-}
+
 #news input{
     display: block;
     width: 100%;
@@ -120,6 +121,9 @@ section{
     background:hotpink;
     padding: 16px;
     margin: 24px 0;
+}
+#map{
+    height: 830px;
 }
 
 /* footer */
