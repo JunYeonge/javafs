@@ -13,8 +13,17 @@
     <script>
         /* 
             비교 연산자: >(초과), <(미만), >=(이상), <=(이하), 
-                        ==(같다), !=(다르다), ===(데이터와 데이터 유형이 모두 같다), 
-                        !==(데이터 또는 데이터 유형이 다르다)
+                        ==(같다), 
+                        !=(다르다), 
+                        ===(같다,데이터와 데이터 유형이 모두 같다), 
+                        !==(다르다. 데이터 또는 데이터 유형이 다르다)
+
+        
+        10 = 10 (x)
+        10 == 10 -> true
+        10 == '10' -> true
+        10 === '10' -> false
+        10 !== '10' -> true
         */
 
         var a = 10;
@@ -23,8 +32,49 @@
         var f = '20';
         var result;
 
-        document.write(result, '<br>');
+        //Number ('이십') -> NAN
+        // 문자의 경우사전준으로뒤에 있는 문자를 큰 것으로 인식한다.
+        // 문자열과 숫자를 비교(>, <, >=, <=)하면 false 이다.
 
+        result = a >b;
+        document.write(result, '<br>');
+        result = a<b;
+        document.write(result, '<br>');
+        result = a <=b;
+        document.write(result, '<br>');
+        result = a >= b;
+        document.write(result, '<br>');
+        result = a != b;
+        document.write(result, '<br>');
+        result = b != f;
+        document.write(result, '<br>');
+        result = d === f;
+        document.write(result, '<br>');
+        
+
+        /*
+            표현식(expression)
+                -값을 만들어 낼 수 있는 것
+                -변수, 값(데이터), 연산자의 조합
+
+                5
+                '안녕하세요?'
+                1 + 2
+
+            document.write(변수, '태그문자열', '문자열', 숫자, 연산식, ...)
+        */
+
+        document.write(result, '<br>');
+        document.write(10 == 10, '<br>');
+        //데이의 형(type) 변환
+        // Number("18")
+        document.write(10 == '10', '<br>');
+        document.write(10 != 10, '<br>');
+        document.write(10 != '10', '<br>');
+        document.write(10 === 10, '<br>');
+        document.write(10 === '10', '<br>');
+        document.write(10 !== 10, '<br>');
+        document.write(10 !== '10', '<br>');
         
     </script>
 </body>
