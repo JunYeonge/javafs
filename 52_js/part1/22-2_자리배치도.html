@@ -18,15 +18,27 @@
                 코드2;
             }
         */
-
+            //학생 수 (stu_num)
         // 입력
-
-
-        // 처리
-
-
+            var stu_num = prompt("학생의 수를 입력해주세요.");
+            var count = prompt("한줄에 앉을 수 있는 학생의 수를 입력해주세요.");
+            var total_line
+            
+            
+            // 처리
+            //학생수 / 한줄인원수 -> 몫, 나머지
+            // 몫: parselnt(학생수 / 한줄인원 수)
+            //나머지 : 학생수 % 한줄인원수
+            
+        
+        
+        if(stu_num % count === 0){
+            total_line = parseInt(stu_num/count);
+        } else{
+            total_line = parseInt(stu_num/count) +1;
+        }
         // 출력
-
+        document.write('학생수는' + stu_num + '명, 한 줄에 앉는 인원은' + count + '이므로 좌석은 총' + total_line + '줄이 필요합니다.')
 
     </script>
 </body>
