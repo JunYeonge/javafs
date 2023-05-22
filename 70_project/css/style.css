@@ -150,15 +150,65 @@ section h2 + p{
  */
 #portfolio ul{
     display: flex;
+    flex-wrap: wrap; /* 줄바꿈 */
+    justify-content: space-between;
 }
 #portfolio li{
     width: 231px;
     height: 162px;
+    margin-bottom: 12px;  /* 이미지들의 밑 여백 */
+    overflow: hidden;  /* 이미지의 크기 */
+}
+#portfolio .moreBtn{
+    margin-top: 64px;
+    text-align: center;
+}
+#portfolio .moreBtn a{
+    padding: 12px 24px;
+    background: #ccc;
 }
 /* section4 */
 #contact .parallax{
     
     background-image: url("../images/parallax3.jpg");
+}
+#contact .container{
+    display: flex;
+}
+#map{
+    flex: 0 0 330px;
+    height: 160px;
+    margin-right: 30px;
+    border-radius: 5px; 
+    overflow: hidden;  /* 크기가 넘어가서 둥근모서리 적용이 보이지 않아 hidden 처리하고 보이는 섹션에 둥근 모서리가 적용되게 한다. */
+}
+#contact address i {
+    margin-right: 20px;
+}
+#contact address + p {
+    margin: 16px 0;
+}
+#contact form{
+    text-align: right;
+}
+#contact [name] {
+    width: 292px;
+    height: 44px;
+    padding-left: 8px;
+}
+#contact [name="user_name"]{
+    margin-right: 11px;
+}
+#contact [name$="message"]{
+    width: 600px;
+    margin: 16px 0;
+}
+#contact button{
+    width: 160px;
+    height: 44px;
+    background: black;
+    color: #fff;
+    text-align: center;
 }
 /* footer */
 footer{

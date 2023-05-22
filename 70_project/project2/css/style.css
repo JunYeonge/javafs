@@ -87,26 +87,28 @@ nav{
     margin: 15px 0;
     border: 1px solid #777;
 }
-
 #news button{
     padding: 12px 16px;
     margin: 20px 0 45px;
     background: #000;
+}
+#news .map{
+    height: 185px;
 }
 /* 푸터 */
 footer{
     background: lightskyblue;
     text-align: center;
     padding: 30px;
+    margin-top: 8px;
 }
 footer span:nth-of-type(1), footer span:nth-of-type(3){
     display: none;
 }
-
-/* 데스크탑 and 테블릿 - 992이상 */
-@media (min-width:992px) {
-    /* 헤더 */
-    header{
+/* 600이상 */
+@media (min-width:600px) {
+     /* 헤더 */
+     header{
         display: flex;
         justify-content: space-between;
     }
@@ -120,27 +122,24 @@ footer span:nth-of-type(1), footer span:nth-of-type(3){
     nav ul li:not(:first-of-type){
         margin-left: 36px;
     }
-    
-    /* 섹션1 */
-    #main_img{
-        max-width: 1496px;
-        margin: 0 auto;
+    /* 메인 타이틀 */
+    #main_img .main_tit{
+        white-space: nowrap;
+    }
+    #main_img span{
+        display:inline-block;
+        margin-left: 16px;
+        text-shadow: 1px 0px 5px #000;
     }
     /* 섹션 2~4 공통 */
-    .section{
-        width: 1496px;
-        margin: 0 auto;
-        padding: 81px 0px 0;
-    }
     .section ul{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
     .section li{
-        width: 362px;
+        width: calc(50% - 8px);
     }
-    /* 섹션2 */
     /* 섹션3 */
     #event li{
         display: flex;
@@ -148,9 +147,49 @@ footer span:nth-of-type(1), footer span:nth-of-type(3){
         justify-content: space-between
     }
     #event li div{
-        background: wheat;
-        height: 100%;
+        height: 250px;
     }
+     /* 섹션4 */
+     #news .map{
+        height: 400px;
+    }
+}
+/* 데스크탑 and 테블릿 - 992이상 */
+@media (min-width:992px) {
+
+     /* 섹션1 */
+    #main_img{
+        max-width: 1496px;
+        margin: 0 auto;
+    }
+    /* 섹션 2~4 공통 */
+    .section{
+        max-width: 1496px;
+        margin: 0 auto;
+        padding: 81px 30px 0;
+    }
+    .section li{
+        width: calc(25% - 8px);
+    }
+    /* 섹션2 */
+   
+    /* 섹션3 */
+  
     /* 섹션4 */
+    #news .map{
+        height: 845px;
+    }
+    /* 섹션5 */
     /* 푸터 */
+    footer span:nth-of-type(1), footer span:nth-of-type(3){
+        display: inline-block;
+    }
+    footer span:nth-of-type(2){
+        display: none;
+    }
+}
+@media (min-width:1573px) {
+    .section{
+        padding: 81px 0px 0;
+    }
 }
