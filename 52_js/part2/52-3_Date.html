@@ -39,31 +39,78 @@
             setMilliseconds()
             setTime()
         */
-        //Tue May 23 2023 16:20:03 GMT+0900 (한국 표준시)
+        // Tue May 23 2023 16:20:03 GMT+0900 (한국 표준시)
         let d = new Date();
         console.log(d);
         //년(YYYY)
-        document.write(d.getFullYear(),'<br>')
+        document.write(d.getFullYear(),'<br>');
         //월(mm) : 0(1월) ~ 11(12월)
         document.write(d.getMonth(),'<br>');
         //일(dd)
         document.write(d.getDate(),'<br>');
-        //요일(week) : 0(일) ~ 6(토)
+        // 요일(week) : 0(일) ~ 6(토);
+        //if를 사용 요일을 일요일 ~ 토요일까지 문자열로 표시하기
         document.write(d.getDay(),'<br>');
+        
         //시 (hh)
         document.write(d.getHours(),'<br>');
         //분 (mm)
         document.write(d.getMinutes(),'<br>');
+
+        let w = d.getMinutes(); // 분 09 13 
+        let ss = d.getSeconds(); // 초 08 38 뜨게하기
+
+        if( w < 10 || ss < 10) {
+            w = '0' + w;
+            ss = '0' + ss;
+        }
+        document.write(w,'<br>')
+        document.write(ss,'<br>')
+
         //초 (ss)
         document.write(d.getSeconds(),'<br>');
+
+
         
         document.write(d.getTime(),'<br>');
 
-        var d2 = new Date(2020,0,20);
-        console.log(d2);
+        // var d2 = new Date(2020,0,20);
+        // console.log(d2);
+
+        if(d.getDay() === 0){
+            document.write("일요일입니다.<br>");
+        } else if(d.getDay() === 1){
+            document.write("월요일입니다.<br>");
+        } else if(d.getDay() === 2){
+            document.write("화요일입니다.<br>");
+        } else if(d.getDay() === 3){
+            document.write("수요일입니다.<br>");
+        } else if(d.getDay() === 4){
+            document.write("목요일입니다.<br>");
+        } else if(d.getDay() === 5){
+            document.write("금요일입니다.<br>");
+        } else{
+            document.write("토요일입니다.<br>");
+        }
 
 
-        
+
+
+        let v = d.getHours();
+
+        if(v >= 13){
+            v = v - 12
+            document.write('현재시간은 오후' + v + '시 입니다.<br>')
+        } else{
+            document.write('현재시간은 오전' + v + '입니다.<br>')
+        }
+
+        // if문 사용하여 오전과 오후를 구분하고 12시간제 두 자리 수로 표시하기
+        // ex) 오전 05시  오후 11시
+        if( v < 10) {
+            v = '0' + v
+        }
+
     </script>
 </body>
 
