@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <title>fullpage</title>
+    <style>
+        body{
+            margin: 0;
+            overflow: hidden;
+        }
+        #fullpage div{
+            height: 100vh;
+            width: 100vw;
+        }
+        #section1{
+            background: lavender;
+        }
+        #section2{
+            background: lightblue;
+        }
+        #section3{
+            background: lemonchiffon;
+        }
+        #section4{
+            background: lightpink;
+        }
+    </style>
+</head>
+<body>
+    <div id="fullpage">
+    <div id="section1" class="section">섹션1</div>
+    <div id="section2" class="section">섹션2</div>
+    <div id="section3" class="section">섹션3</div>
+    <div id="section4" class="section">섹션4</div>
+    </div>
+    <script>
+    num = 1;
+
+    document.documentElement.onwheel = function(e) {
+        if (e.deltaY < 0) {
+            location.href= "#section" + num;
+            num--;
+            if(num == 0){
+                num = 1;
+            }
+    }else{
+        location,href = "#section" + num;
+        num++;
+        if(num > 4){
+            num  = 4
+        }
+    }
+    };
+    </script>
+</body>
+</html>
