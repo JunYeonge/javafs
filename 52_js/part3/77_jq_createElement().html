@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+JS</title>
+</head>
+
+<body>
+    <h1>텍스트 노드를 사용하는 새로운 요소 추가하기</h1>
+    <div id="info"></div>
+
+
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        /* 
+            $('선택자').createElement('선택자2') ~ 요소a에 요소b 추가
+
+            #info::after
+            #info::before
+
+            before<div id="info">prepend내용append</div>after
+            a.append(b) ~ a에 b 추가
+            a.prepend(b) ~ a에 b 추가
+            a.after(b) ~ a에 b 추가
+            a.before(b) ~ a에 b 추가
+
+            before<div id="info">prepend내용<p>DOM이란? DOM은 Document Object Model의 줄임말이다.</p>append</div>after
+
+        */
+ /*
+            #info 박스에 p요소 삽입하고,
+            p요소의 내용으로 'DOM이란? DOM은 Document Object Model의 줄임말이다. 을 생성하여
+            #info 박스에 추가하시오'
+
+            img요소를 생성(src는 'pic_htmltree')하여 
+
+            메서드 : createElement(),appendChild()
+        */
+
+        const info = $('#info');
+        const para = document.createElement('p');
+
+        const txt ='DOM이란? DOM은 Document Object Model의 줄임말이다.';
+        info.append(para);
+        para.append(txt);
+
+        info.prerend(para);
+        info.append(txt);
+
+        info.after(para);
+        info.append(txt);
+
+        info.before(para);
+        info.append(txt);
+
+
+        // const img = document.createElement('img');
+        // info.appendChild(img);
+        // img.setAttribute('src','../assets/htmltree.gif');
+        // img.setAttribute('alt','DOM htmltree');
+        
+    </script>
+</body>
+
+</html>

@@ -18,8 +18,27 @@
             요소.createTextNode(텍스트) ~ 요소에 텍스트 노드 추가
             부모노드.appendChild(자식노드) ~ 부모 노드에 자식 노드 연결
         */
+ /*
+            #info 박스에 p요소 삽입하고,
+            p요소의 내용으로 'DOM이란? DOM은 Document Object Model의 줄임말이다. 을 생성하여
+            #info 박스에 추가하시오'
 
+            img요소를 생성(src는 'pic_htmltree')하여 
 
+            메서드 : createElement(), createTextNode(), appendChild()
+        */
+
+        const info = document.querySelector('#info');
+        const para = document.createElement('p');
+        info.appendChild(para);
+        const txt =document.createTextNode( 'DOM이란? DOM은 Document Object Model의 줄임말이다.');
+        para.appendChild(txt);
+
+        const img = document.createElement('img');
+        info.appendChild(img);
+        img.setAttribute('src','../assets/htmltree.gif');
+        img.setAttribute('alt','DOM htmltree');
+        
     </script>
 </body>
 

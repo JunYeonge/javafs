@@ -57,7 +57,7 @@ section h2 + p{
 #home {
     position: relative;
     height: 930px;
-    background:url("../images/img1.png") no-repeat 50% 50%/cover fixed;
+    background:url("../images/parallax1.jpg") no-repeat 50% 50%/cover fixed;
 }
 /* 요소를 부모 안에 정가운데 배치 */
 .logo {
@@ -65,7 +65,7 @@ section h2 + p{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: lightskyblue;
+    background: #000;
     padding: 8px 24px;
 }
 

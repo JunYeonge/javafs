@@ -30,13 +30,17 @@
 
 <body>
     <ul>
-        <button>클래스 추가</button>
-        <button>클래스 제거</button>
+        <button class="btn1">클래스 추가</button>
+        <button class="btn2">클래스 제거</button>
     </ul>
     <div></div>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
     <script>
         /* 
+            $('선택자').addClass('클래스1 클래스2 ...') ~ 요소의 클래스 추가
+            $('선택자').removeClass('클래스1 클래스2 ...') ~ 요소의 클래스 제거
+            
             요소.classList.add('클래스') ~ 요소의 클래스 추가
             요소.classList.remove('클래스') ~ 요소의 클래스 제거
         */
@@ -50,16 +54,16 @@
             메서드 : classList.add(), classList.remove()
         */
 
-        const addbtn = document.querySelectorAll('button')[0];
-        const rebtn = document.querySelectorAll('button')[1];
-        const box = document.querySelector('div');
+        const addbtn = $('.btn1');
+        const rebtn = $('.btn2');
+        const box = $('div');
 
-        addbtn.onclick = function(){
-            box.classList.add('on', 'active');
-        };
-        rebtn.onclick = function(){
-            box.classList.remove('on', 'active');
-        };
+        addbtn.click(function(){
+            box.addClass('on active');
+        });
+        rebtn.click(function(){
+            box.removeClass('on active');
+        });
 
 
     </script>
