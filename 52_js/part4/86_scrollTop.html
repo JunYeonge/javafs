@@ -30,6 +30,14 @@
             document.documentElement.scrollTop ~ 창에서 스크롤한 양 반환
         */
 
+        const num = document.querySelector('p');
+
+        window.onscroll = function(e){
+            let st = document.documentElement.scrollTop
+            num.innerText = st;
+            
+        };
+
     </script>
 </body>
 

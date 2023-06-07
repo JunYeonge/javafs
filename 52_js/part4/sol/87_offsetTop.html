@@ -8,6 +8,9 @@
     <title>HTML+CSS+JS</title>
     <style>
         div {
+            position: absolute;
+            left: 0;
+            top: 0;
             width: 200px;
             height: 200px;
             background: blue;
@@ -17,6 +20,8 @@
 </head>
 
 <body>
+    <span></span>
+    <button></button>
     <div></div>
 
     <script>
@@ -24,7 +29,15 @@
             요소.offsetTop ~ 창 끝에서 요소의 y축 위치 반환
         */
 
-        let ab = document.querySelector('div').offsetTop;
+        // let ab = document.querySelector('div').offsetTop;
+
+        const btn = document.querySelector('button');
+        const blueBox = document.querySelector('div');
+        const num = document.querySelector('span');
+
+        btn.onclick = function(){
+            let posY = blueBox.offsetTop;
+        }
         alert(ab);
     </script>
 </body>
