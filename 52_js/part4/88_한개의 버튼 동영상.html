@@ -27,6 +27,8 @@
             border-radius: 50%;
             cursor: pointer;
             text-indent: -999999;
+            opacity: 0;
+            transition: .3;
         }
         .btn::after{
             content: '';
@@ -103,6 +105,14 @@
             
         }
     }
+
+    $('video').mouseenter (function() {
+        btn.css({opacity:1});
+    });
+
+    $('video').mouseleave (function() {
+        btn.css({opacity:0});
+    });
         
         
         
