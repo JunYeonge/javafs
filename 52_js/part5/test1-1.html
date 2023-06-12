@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset */
+        @import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li{
+            list-style: none;
+        }
+        html{
+            font-size: 10px;
+        }
+        a{
+            text-decoration: none;
+        }
+        /* GNB(Global Navigation Bar) */
+        nav {
+            z-index: 9999;
+            position: relative;
+            height: 32px;
+            background: red;
+        }
+
+        .nav_bg {
+            position: absolute;
+            left: 0;
+            top: 32px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        /* 폰트의 위계를 지정한다: 크기, 색, 굵기 */
+        /* 1depth: main */
+        .main {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .main>li {
+            /* 삼각형 모양 기준 */
+            position: relative;
+            width: 160px;
+            /* 메인메뉴와 서브메뉴 모두 텍스트 가운데 */
+            text-align: center;
+        }
+        
+        .main>li>a {
+            display: block;
+            padding: 5px 0;
+            /* width: 100%; */
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .main>li:hover>a {
+            background: #ccc;
+            color: #333;
+        }
+
+        .main>li:hover>a:after {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translate(-50%);
+            content: '';
+            height: 0;
+            border-top: 10px solid;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            color: #ccc
+        }
+
+        /* 2depth: sub */
+        .sub {
+            display: none;
+            padding-top: 15px 0;
+        }
+
+        .sub a {
+            display: block;
+            /* line-height: 2px; */
+            color: #ccc;
+            font-size: 1.4rem;
+            font-weight: 300;
+            padding: 3px 12px;
+        }
+
+        .sub a:hover {
+            background: rgba(255, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <div id="innerHeader">
+                <nav>
+                    <div class="nav_bg"></div>
+                    <ul class="main">
+                        <li><a href="#">해외여행</a>
+                            <ul class="sub">
+                                <li><a href="#">동남아/대만</a></li>
+                                <li><a href="#">중국/홍콩</a></li>
+                                <li><a href="#">유럽/두바이</a></li>
+                                <li><a href="#">미주/하와이</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">국내여행</a>
+                            <ul class="sub">
+                                <li><a href="#">서울/경기권</a></li>
+                                <li><a href="#">충청권</a></li>
+                                <li><a href="#">전라권</a></li>
+                                <li><a href="#">경상/강원권</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">제주도</a>
+                            <ul class="sub">
+                                <li><a href="#">버스여행</a></li>
+                                <li><a href="#">자유여행</a></li>
+                                <li><a href="#">호텔/펜션</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">렌트카</a>
+                            <ul class="sub">
+                                <li><a href="#">국내 렌트카</a></li>
+                                <li><a href="#">국외 렌트카</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- 제이쿼리 라이브러리 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script>
+            $(function () {
+                // 내비게이션바
+                $('.main > li').mouseenter(function () {
+                    // a태그 기본 이벤트 제거
+                    $('.sub').stop().slideDown();
+                    $('.nav_bg').stop().animate({ height: 150 });
+                });
+                $('nav').mouseleave(function () {
+                    $('.sub').stop().slideUp();
+                    $('.nav_bg').stop().animate({ height: 0 });
+                });
+            });
+        </script>
+</body>
+
+</html>

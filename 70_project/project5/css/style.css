@@ -1,394 +1,102 @@
-@charset "utf-8";  
-@import url(../css/reset.css);
-@import url(../css/typo.css);
-
-a {
-    text-decoration: none;
-}
-
-body {
-    font-size: 12px;
-    font-family: 'Orbitron', sans-serif;
-}
-
-/* navigation */
-#menu {
-    position: fixed;
-    z-index: 99;
-    left: 0;
-    top: -10px;
-}
-
-#menu li {
-    display: inline-block;
-}
-
-#menu a {
-    position: relative;
-    top: 5px;
-    color: #111;
-    background: #fff;
-    padding: 20px 20px 10px;
-    border-radius: 0 0 10px 10px;
-    transition: .3s;
-}
-
-#menu li.active a {
-    color: #fff;
-    background: #111;
-}
-
-#menu a:hover {
-    top: 10px;
-}
-
-/* 오른쪽 페이저 버튼 색 */
-#fp-nav ul li a span {
-    background: #fff;
-}
-
-/* 오른쪽 페이저 툴립 글자 색 */
-#fp-nav ul li .fp-tooltip {
-    color: #fff;
-}
-
-.section {
-    text-align: center;
-    font-size: 3em;
-}
-
-#section3 p {
-    position:absolute;
-    top:50%;
-    left:0%;
-    opacity:0;
-    transform:translate(-50%);
-}
-
-#footer {
-    background:#111;
-    padding: 100px 0;
-    color:#fff;
-}
+@charset "utf-8";
+@import url('reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron&family=Play&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css');
+@import url('typo.css');
+@import url('nav.css');
+@import url('layout.css');
 
 /* 헤더 */
-header{
+#header {
     z-index: 9999;
     position: fixed;
-    width: 100%;
-    padding: 16px 30px;
-    height: 54px;
-    background: lightskyblue;
-    box-shadow: 0 2px 5px rgba(185, 169, 169, 0.39), 0 2px 10px rgba(0,0,0,0.12);
-}
-nav{
-    display: none;
-}
-/* 섹션1 */
-#main_img{
-    position: relative;
-}
-#main_img h2{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-#main_img b{
-    padding: 6px 12px 10px;
-    color: #777;
-}
-/* 배경이미지 안에 h2 애니메이션 추가 하기 */
-
-#main_img span{
-    display: none;
-}
-/* 섹션2~4 공통 */
-.section{
-    padding: 81px 30px 0;
-}
-.section h2{
-    line-height: 1;
-    padding: 20px 0;
-    margin-bottom: 20px;
-}
-.section li{
-    margin-bottom: 16px;
-}
-
-/* 섹션2 */
-#menu h2{
-    margin-bottom: 40px;
-}
-#menu ul::after {
-    content: '';
-    clear: both;
-    display: block;
-    position: absolute;
+    top:0;
+    width:100%;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    background: transparent;
+    /* background: #fdd000; */
 }
-#menu li{
-    position: relative;
+
+/* 로고 */
+.logo {
+    text-align: center;
+    letter-spacing: .5rem;
+    line-height: 1.4;
 }
-#menu li:hover {
-    box-shadow: 10px 5px 5px 5px #ccc;
+
+.logo b {
+    display: block;
+    font-weight: normal;
+    font-size: 2.2rem;
 }
-#menu h3{
+
+.logo span {
+    font-size: 1.6rem;
+}
+
+/* 풀 페이지 비디오 */
+/* .vid {
     position: absolute;
-    left: 0;
-    top: 0;
-    padding: 4px 12px;
-    background: #000;
-}
-#menu h3:hover {
-    color: blue;
-    background: lightcoral;
-    cursor: pointer;
-}
-
-/* 섹션3 */
-#eve {
-    height: 700px;
-    background-image: url(../images/img11.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    text-align: center;
-    overflow: hidden;
-    background-attachment: fixed;
-    margin-top: 100px;
-}
-
-#eve #div3 {
-    width: 50%;
-    height: 100%;
-    background: white;
-    background: linear-gradient(-75deg, transparent 160px, white 0);
-    margin-right: 50px;
-    filter: drop-shadow(3px 1px 3px #ccc);
-    padding-top: 120px;
-}
-
-/* 애니메이션 효과 */
-.ani {
-    animation: lol 6s forwards;
-}
-
-@keyframes lol {
-    0% {
-        opacity: 0;
-        left: 0;
-        animation-timing-function: ease-out;
-    }
-
-    100% {
-        opacity: 1;
-        left: 400px;
-        animation-timing-function: ease-out;
-    }
-}
-#div3 img{
-    width: 50%;
-}
-
-#eve h2 {
-    text-align: left;
-}
-/* 섹션4 */
-#event > p {
-    margin-bottom: 40px;
-}
-#event h3{
-    margin-top: 16px;
-}
-#event p:first-of-type{
-    margin: 8px 0;
-}
-#event a{
-    display: block;
-    text-align: center;
-    background: #ccc;
-    padding: 6px 0;
-    margin-top: 16px;
-}
-
-/* 섹션5 */
-#news input{
-    display: block;
     width: 100%;
-    padding: 8px;
-    margin: 15px 0;
-    border: 1px solid #777;
+    height: 100vh;
+    top: 0;
+    left: 0;
+} */
+
+/* 섹션1 - 캐로셀 */
+/* 전체 영역 */
+.bx-wrapper {
+    position: relative;
+    margin-bottom: 60px;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    background: transparent;
 }
-#news input:hover {
-    border: 3px solid purple;
+.bx-viewport {
+    height: 100vh !important;
 }
-#news div {
-    text-align: end;
+/* 페이저 */
+.bx-wrapper .bx-pager {
+    bottom: 50px;
 }
-#news button{
-    padding: 12px 16px;
-    margin: 20px 0 45px;
-    background: #ccc;
-}
-#news button::after {
-    content: '';
+.bx-wrapper .bx-pager.bx-default-pager a {
+    background: transparent;
+    border: 1px solid #555;
+    text-indent: -9999px;
     display: block;
-    height: 2px;
-    background: cornflowerblue;
+    width: 12px;
+    height: 12px;
+    margin: 0 12px;
+    outline: 0;
+    border-radius: 50%;
+}
+.bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus {
+    background: #000;
+    transform: scale(1.2);
     transition: .3s;
-    transform: scaleX(0);
-    transform-origin: 0 0;
+    border: none;
 }
-#news button:hover::after {
-    transform: scaleX(1);
-}
-#news button:hover {
-    color: cornflowerblue;
-}
-#news .map{
-    height: 185px;
-}
-/* 푸터 */
-footer{
-    background: lightskyblue;
-    text-align: center;
-    padding: 30px;
-    margin-top: 8px;
-}
-footer span:nth-of-type(1), footer span:nth-of-type(3){
-    display: none;
-}
-/* 600이상 */
-@media (min-width:600px) {
-     /* 헤더 */
-    header{
-        display: flex;
-        justify-content: space-between;
-    }
-    /* 내비게이션 */
-    nav{
-        display: block;
-    }
-    nav ul{
-        display: flex;
-    }
-    nav ul li:not(:first-of-type){
-        margin-left: 36px;
-    }
-    nav a:hover {
-        color: deeppink;
-        font-weight: bold;
-    }
-    
-    
-    nav li::after {
-        content: '';
-        display: block;
-        height: 2px;
-        background: deeppink;
-        transition: .3s;
-        transform: scaleX(0);
-        transform-origin: 0 0;
-    }
-    
-    nav li:hover::after {
-        transform: scaleX(1);
-    }
-    /* 메인 타이틀 */
-    #main_img .main_tit{
-        white-space: nowrap;
-    }
-    #main_img span{
-        display:inline-block;
-        margin-left: 16px;
-        text-shadow: 1px 0px 5px #000;
-    }
-    /* 섹션 2~4 공통 */
-    .section ul{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .section li{
-        width: calc(50% - 8px);
-    }
-    /* 섹션3 */
-    #event li{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    #event li div{
-        height: 250px;
-    }
-    #news input:hover {
-        border: 3px solid purple;
-    }
-    #div3 h3{
-        font-weight: bold;
-    }
-     /* 섹션4 */
-    #news .map{
-        height: 400px;
-    }
-}
-/* 데스크탑 and 테블릿 - 992이상 */
-@media (min-width:992px) {
 
-     /* 섹션1 */
-    #main_img{
-        max-width: 1496px;
-        margin: 0 auto;
-    }
-    /* 섹션 2~4 공통 */
-    .section{
-        max-width: 1496px;
-        margin: 0 auto;
-        padding: 81px 30px 0;
-    }
-    .section li{
-        width: calc(25% - 8px);
-    }
-    /* 섹션2 */
-
-    /* 섹션3 */
-
-    /* 섹션4 */
-    #news .map{
-        height: 860px;
-    }
-    /* 섹션5 */
-    /* 푸터 */
-    footer span:nth-of-type(1), footer span:nth-of-type(3){
-        display: inline-block;
-    }
-    footer span:nth-of-type(2){
-        display: none;
-    }
+/* 좌우버튼 */
+.bx-wrapper .bx-controls-direction a {
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+    width: 78px;
+    height: 78px;
 }
-@media (min-width:1573px) {
-    .section{
-        padding: 81px 0px 0;
-    }
+.bx-wrapper .bx-prev {
+    left: 140px;
+    background: url(../images/controls.png) 0px 0px no-repeat;
 }
-@media (max-width:992px) {
-    #div3 p{
-        display: none;
-    }
-    #div3 h4{
-        font-size: 12px;
-    }
+.bx-wrapper .bx-next {
+    right: 140px;
+    background: url(../images/next.png) 0px 0px no-repeat;
 }
-@media (max-width:700px) {
-    #div3 p{
-        display: none;
-    }
-    #div3 h4{
-        display: none;
-
-    }
-    #div3 h3{
-        font-size: 10px;
-    }
+.bx-wrapper .bx-next:focus, .bx-wrapper .bx-next:hover {
+    background-position: 0px 0;
 }
