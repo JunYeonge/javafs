@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현대자동차</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 10px;
+        }
+        body{
+            font: 1.5rem/1.6 'MaruBuri-Regular';
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        div ul{
+            position: relative;
+        }
+        div ul li{
+            display: inline-block;
+            justify-content: space-between;
+        }
+        .oneRank div{
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        img{
+            width: 100%;
+        }
+        /* #wrap{
+            background: red;
+        } */
+        @media (min-width:992px){
+            .twrk img{
+                width: 225px;
+                height:168px;
+            }
+            .trrk img{
+                width: 225px;
+                height:168px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div id="wrap">
+            <h2>Model</h2>
+            <p>최근 한 달 동안 고객님들이 가장 많이 구매하신 모델입니다.</p>
+        
+            <div class="btn">
+            <ul>
+                <li class="oneRank"><a href="#"><img src="images/car1.jpg" alt="">
+                    <div><span>1위.</span>디 올 뉴 그랜저 Hydrid</div></a>
+                </li>
+                <li><a href="#" class="twrk"><img src="images/car2.jpg" alt="">
+                    <div><span>2위.</span>투쌴 Hydrid</div></a>
+                </li>
+                <li><a href="#" class="trrk"><img src="images/car3.jpg" alt="">
+                    <div><span>3위.</span>싼타페 Hydrid</div></a>
+                </li>
+            </ul>
+            
+        </div>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <script>
+        /*
+            탭1을 클릭하면
+            탭1 내용을 화면에 표시(display:block)
+            탭2 내용을 화면에서 숨김(display:none)
+            탭2을 클릭하면
+            탭2 내용을 화면에 표시
+
+            이벤트 : click
+            메서드 : index(), eq(), addClass(), removeClass()
+            키워드 : this
+        */ 
+        const tabBtn = $('.tabBtns li');
+        const tabCont = $('#tabs > div');
+
+        // tabBtn을 클릭하면 함수 설정
+        tabBtn.click(function(){
+            let idx = $(this).index();
+            // 클릭한 버튼만 on클래스 추가, 형제들은 제거
+            $(this).addClass("on").siblings().removeClass("on");
+            // idx번째에 해당하는 내용만 보이고, 형제들은 숨긴다.
+            tabCont.eq(idx).addClass("on").siblings().removeClass("on");
+        });
+    </script>
+</body>
+</html>
