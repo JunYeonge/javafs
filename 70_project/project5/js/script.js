@@ -91,22 +91,63 @@ $(function () {
         autoPager();
         return false;
     });
-    
+
     //섹션3: 탭
     const tabBtn = $("#section3 .thumb li"),
-            bigImg = $("#section3 .big li"),
-            txt1 = $("#section3 .txt li");
+        bigImg = $("#section3 .big li"),
+        txt1 = $("#section3 .txt li");
 
-        tabBtn.click(function(){
-            let idx = $(this).index();
-            tabBtn.removeClass('active');
-            bigImg.removeClass('active');
-            txt1.removeClass('active');
-            $(this).addClass('active');
-            bigImg.eq(idx).addClass('active');
-            console.log(bigImg);
-            txt1.eq(idx).addClass('active');
-        });
+    tabBtn.click(function () {
+        let idx = $(this).index();
+        tabBtn.removeClass('active');
+        bigImg.removeClass('active');
+        txt1.removeClass('active');
+        $(this).addClass('active');
+        bigImg.eq(idx).addClass('active');
+        txt1.eq(idx).addClass('active');
+    });
+
+    //섹션4: 브랜드 소개
+    // 상단 텍스트 모션을 위한 텍스트 복제
+    const txtTop = $('.top');
+    const txtTopSpan = txtTop.find('span');
+    const txtBtm = $('.btm');
+    const txtBtmSpan = txtBtm.find('span');
+
+    txtTopSpan.clone().appendTo(txtTop);
+    txtTopSpan.clone().appendTo(txtBtm);
+
+    // 호버 효과 페이드 효과
+    const inner = $('.container > div');
+    const fade = inner.find('.fade');
+    let cnt = 0, idx, timer;
+
+    fade.mouseenter(function () {
+        // 마우스를 올린 fade의 부모의 색인 번호를 idx 저장
+        //왼쪽은 0, 오늘쪽은 1
+        idx = $(this).parent().index();
+        // 2초마다 fadeFn 함수를 호출한다.
+        timer = setInterval(fadeFn, 2000);
+    });
+    // fade 위에서 마우스가 벗어나면 함수 실행
+    fade.mouseleave(function () {
+        //setInterval 정지
+        clearInterval(timer);
+    });
+
+    function fadeFn() {
+        cnt++;
+        if (cnt > 2) {
+            cnt = 0;
+        }
+        // idx가 0이면 .story
+        // idx가 1이면 .identity
+        // cnt: 0,1,2
+        inner.eq(idx).find('li').eq(cnt).fadeIn(1000).siblings().fadeOut(1000);
+        // inner.eq(idx).find('li').fadeOut(1000);
+        // inner.eq(idx).find('li').eq(cnt).fadeIn(1000);
+    }
+
     // 풀페이지 레이아웃
     $('.section').mousewheel(function (e, delta) {
         let prev;
@@ -127,19 +168,19 @@ $(function () {
         txt = sec2.find('.txt');
 
 
-        $(window).scroll (function () {
-            let st = $(this).scrollTop();
-            let stval = 600;
-            console.log(st);
+    $(window).scroll(function () {
+        let st = $(this).scrollTop();
+        let stval = 600;
+        console.log(st);
 
-            if (st >= stval) {
-                btn.css({opacity :1});
-                txt.css({left : 360 + 'px'});
-            } else{
-                btn.css({opacity : 0});
-                txt.css({left : -400 + 'px'});
-            }    
-        });
-
-
+        if (st >= stval) {
+            btn.css({ opacity: 1 });
+            txt.css({ left: 360 + 'px' });
+        } else {
+            btn.css({ opacity: 0 });
+            txt.css({ left: -400 + 'px' });
+        }
     });
+
+
+});

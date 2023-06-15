@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css");
 @import url("reset.css");
 @import url("typo.css");
 
@@ -127,16 +128,16 @@ section h2 + p{
 .progress .lst:nth-of-type(3) div span {
     width: 75%;
 }
-.counter{
-    display: flex;
-    justify-content: space-around;
+
+#counter ul{
     align-items: center;
     height: 132px;
     background: #000;
-}
-.counter span{
-    display: block;
+    color: #fff;
     text-align: center;
+}
+#counter span{
+    display: block;
 }
 /* section3 */
 #portfolio .parallax{
@@ -157,6 +158,7 @@ section h2 + p{
     width: 231px;
     height: 162px;
     margin-bottom: 12px;  /* 이미지들의 밑 여백 */
+    border: .2px solid #000;
     overflow: hidden;  /* 이미지의 크기 */
 }
 #portfolio .moreBtn{
@@ -166,6 +168,9 @@ section h2 + p{
 #portfolio .moreBtn a{
     padding: 12px 24px;
     background: #ccc;
+}
+#portfolio .moreBtn button{
+    font-size: 2.4rem;
 }
 /* section4 */
 #contact .parallax{
