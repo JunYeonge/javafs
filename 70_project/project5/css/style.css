@@ -19,6 +19,7 @@
     padding: 0 60px;
     background: transparent;
     /* background: #fdd000; */
+    transition: .5s .5s;
 }
 
 /* 로고 */
@@ -618,7 +619,7 @@ li {
     position: absolute;
     width: 325px;
     height: 300px;
-    background: url("../images/bg_line.png") no-repeat;
+    background: url(../images/bg_line.png) no-repeat;
 }
 
 #section4 .story .title {
@@ -651,4 +652,75 @@ li {
     right: 37px;
     top: 230px;
     text-align: right;
+}
+
+/* 푸터 */
+#footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 80px 70px 330px;
+    background: #2c2d2f url(../images/smimg2.jpg) no-repeat 80px 50%/10%;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+#footer .bnb ul {
+    display: flex;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+#footer .bnb ul a {
+    color: #fff;
+}
+
+#footer .bnb li:not(:nth-last-of-type(5))::after {
+    content: '|';
+    margin: 0 16px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+#footer .copy {
+    margin-top: 30px;
+}
+
+/* 패밀리사이트 */
+#footer .fs {
+    position: relative;
+    top: 80px;
+    width: 240px;
+    height: 50px;
+}
+
+#footer .fs .fsbtn {
+    display: inline-block;
+    width: 240px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background: #494949;
+    border: 1px solid #676767;
+    color: #b9b9b9;
+    font-weight: 700;
+}
+
+#footer .fs i {
+    margin-left: 40px;
+}
+
+#footer .fs ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    width: 100%;
+    background: #494949;
+    border: 1px solid #676767;
+    border-bottom: none;
+    padding: 15px 40px;
+}
+
+#footer .fs ul a {
+    color: #b9b9b9;
+    line-height: 2;
 }

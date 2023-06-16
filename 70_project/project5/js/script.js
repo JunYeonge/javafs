@@ -51,7 +51,7 @@ $(function () {
     function titMotion() {
         // 슬라이드 전환 직후의 텍스트 모션
         $('#slideWrap .slider li div').animate({ top: 0, opacity: 1 });
-    }
+    };
 
     function autoPager() {
         // 페이저의 이미지 변경
@@ -63,7 +63,7 @@ $(function () {
 
         // 슬라이드 전환 직전의 텍스트 모션
         $('#slideWrap .slider li div').css({ top: 100, opacity: 0 });
-    }
+    };
 
     // 페이저 버튼
     $('#slideWrap .pager a').click(function (e) {
@@ -135,6 +135,24 @@ $(function () {
         clearInterval(timer);
     });
 
+    // 마우스 내릴시 내비 색상 보이게 하기
+    // 헤더
+    const headerBg = $('#header');
+
+    // 윈도우에 스크롤 이벤트가 발생하면 함수 실행
+    $(window).scroll(function () {
+        // 스크롤바를 스크롤한 양을 st에 저장
+        let st = document.documentElement.scrollTop;
+        let stVal = 600;
+
+        if (st >= stVal) {
+            headerBg.css({ background: '#888' })
+            
+        } else {
+            headerBg.css({ background: 'transparent' })
+        }
+    });
+
     function fadeFn() {
         cnt++;
         if (cnt > 2) {
@@ -146,7 +164,54 @@ $(function () {
         inner.eq(idx).find('li').eq(cnt).fadeIn(1000).siblings().fadeOut(1000);
         // inner.eq(idx).find('li').fadeOut(1000);
         // inner.eq(idx).find('li').eq(cnt).fadeIn(1000);
-    }
+    };
+
+    // 패밀리 사이트
+    const fs = $('.fs');
+    const fsLst = fs.find('ul');
+    const fsIcon = fs.find('i');
+    const fsTxt = fs.find('span');
+    const fsbtn = fs.find('.fsbtn');
+
+    let state = 0;
+
+    $(function () {
+        $('.fs .fsbtn').click(function (e) {
+            // $('.fs ul').toggle();
+
+            /* 
+                효과 메서드
+                hide()
+                show()
+                toggle()
+                fadeIn()
+                fadeOut()
+                fadeTo()
+                fadeToggle()
+                slideDown()
+                slideUp()
+                SildeToggle()
+                animate()
+                stop()
+
+                토글(toggle)이란 - 두 가지 상태를 번갈아 반복
+            */
+            $(fsLst).slideToggle();
+
+            /* 삼각형 모양 바꾸기 */
+            if (state == 0) {
+                // $('선택자').메서드();
+                // $('선택자').attr(속성, 값); ~ 하나의 속성
+                // $('선택자').attr({속성: 값, 속성 : 값, ...}); ~ 여러개의 속성
+                fsIcon.attr({ class: 'fa-solid fa-minus' });
+                state = 1;
+            } else {
+                $('.fs i').attr({ class: 'fa-solid fa-plus' });
+                fsTxt.attr('관련사이트 열기');
+                state = 0;
+            }
+        });
+    });
 
     // 풀페이지 레이아웃
     $('.section').mousewheel(function (e, delta) {
