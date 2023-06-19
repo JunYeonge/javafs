@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Counter</h1>
+    </div>
+
+    <div id="counter">
+        <ul>
+            <li><span>0+</span> 숫자의 의미</li>
+        </ul>
+        
+    </div>
+
+    <br>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        
+    const elem = document.querySelector('#counter span');
+
+
+window.onscroll = function () {
+    let scr_e = document.documentElement.scrollTop;
+    if (scr_e >= 150) {
+        move();
+    }
+}
+
+function move() {
+    let i = 0;
+    setInterval(function () {
+        if (i > 6) {
+            return;
+        }
+        elem.innerHTML = i + "+";
+        i++
+    }, 100)
+
+    //  ^ 아래 함수를 묶음
+
+    // setTimeout(function () {
+    //     elem.innerHTML = 1 + "%";
+    // }, 100);
+    // setTimeout(function () {
+    //     elem.innerHTML = 2 + "%";
+    // }, 200);
+    // setTimeout(function () {
+    //     elem.innerHTML = 3 + "%";
+    // }, 300);
+    // setTimeout(function () {
+    //     elem.innerHTML = 4 + "%";
+    // }, 400);
+    // setTimeout(function () {
+    //     elem.innerHTML = 5 + "%";
+    // }, 500);
+
+}
+</script>
+    </script>
+</body>
+
+</html>
