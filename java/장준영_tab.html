@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color: #000;
+    }
+    div{
+        border: 1px solid #000;
+        position: absolute;
+        width: 400px;
+        height: 300px;
+        display: inline;
+    }
+    .sub{
+        display: none;
+        /* position: absolute; */
+    }
+    .btn1:checked ~ #a1{
+        display: block;
+    }
+    .btn2:checked ~ #a2{
+        display: block;
+    }
+    .btn3:checked ~ #a3{
+        display: block;
+    }
+    input{
+        display: none;
+    }
+</style>
+<body>
+    <input type="radio" name="tabs" id="btn1" checked>
+    <input type="radio" name="tabs" id="btn2" >
+    <input type="radio" name="tabs" id="btn3" >
+    
+    
+    <div>
+        <label for="btn1">메뉴1</label>
+        <ul id="a1" class="sub">
+            <li>메뉴1의 내용입니다.</li>
+            <li>메뉴1의 내용입니다.</li>
+            <li>메뉴1의 내용입니다.</li>
+            <li>메뉴1의 내용입니다.</li>
+            <li>메뉴1의 내용입니다.</li>
+        </ul>
+
+        <label for="btn2">메뉴2</label>
+        <ul id="a2" class="sub">
+            <li>메뉴2의 내용입니다.</li>
+            <li>메뉴2의 내용입니다.</li>
+            <li>메뉴2의 내용입니다.</li>
+            <li>메뉴2의 내용입니다.</li>
+            <li>메뉴2의 내용입니다.</li>
+        </ul>
+
+        <label for="btn3">메뉴3</label>
+        <ul id="a3" class="sub">
+            <li>메뉴3의 내용입니다.</li>
+            <li>메뉴3의 내용입니다.</li>
+            <li>메뉴3의 내용입니다.</li>
+            <li>메뉴3의 내용입니다.</li>
+            <li>메뉴3의 내용입니다.</li>
+        </ul>
+    </div>
+</body>
+</html>

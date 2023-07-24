@@ -12,7 +12,6 @@
 
         @font-face {
             font-family: 'East Sea Dokdo', cursive;
-            ;
             src: url(../app/font/EastSeaDokdo-Regular.ttf);
         }
 
@@ -96,22 +95,23 @@
     <script>
         var box = $(".box");
         var event = $("event");
+        
 
         const againBtn = document.querySelector('#againBtn');
         const logoutBtn = document.querySelector('#logoutBtn');
         const result1 = document.querySelector('#vs');
 
         switch (box) {
-            case "1":
+            case 1:
                 box = 1;
                 break;
-            case "2":
+            case 2:
                 box = 2;
                 break;
-            case "3":
+            case 3:
                 box = 3;
                 break;
-            case "4":
+            case 4:
                 box = 4;
                 break;
         }

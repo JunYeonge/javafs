@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+Bootstrap</title>
+    <!-- 부트스트랩 CSS 링크 추가 -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            margin: 0;
+        }
+        /* 부트스트랩의 navbar 클래스 적용 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 54px;
+            background: navajowhite;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.16),0 2px 10px rgba(0,0,0,0.12);
+        }
+        section{
+            height: 1000px;
+        }
+        .backToTop{
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            color: antiquewhite;
+            width: 100px;
+            height: 100px;
+            background: #000;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>부드러운 스크롤 움직임</h1>
+    <!-- 부트스트랩의 navbar 클래스 적용 -->
+    <header class="navbar">
+        <nav class="navbar-nav">
+            <!-- 네비게이션 링크에 스크롤 스무딩 적용을 위해 data-scroll 속성 추가 -->
+            <a class="nav-link" href="#section1" data-scroll>섹션1</a>
+            <a class="nav-link" href="#section2" data-scroll>섹션2</a>
+        </nav>
+    </header>
+    <section id="section1"><h2>섹션1</h2></section>
+    <section id="section2"><h2>섹션2</h2></section>
+    <footer>
+        <div class="backToTop"><a href="#top">to the top</a></div>
+    </footer>
+
+    <!-- 부트스트랩의 자바스크립트 라이브러리 및 스크립트 추가 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // 스크롤 스무딩을 위한 스크립트
+        $(document).ready(function() {
+            $('[data-scroll]').on('click', function(event) {
+                event.preventDefault();
+                var target = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

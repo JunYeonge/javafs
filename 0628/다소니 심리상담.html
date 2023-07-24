@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        li{
+            position: absolute;
+            list-style: none;
+            width: 100%;
+            animation: 10s infinite;
+        }
+        .slide {
+            width: 100%;
+        }
+        li:first-of-type{
+        animation-name: fade1;
+        }
+
+        li:nth-of-type(2){
+        animation-name: fade2;
+        }
+
+        li:last-of-type{
+        animation-name: fade3;
+        }
+
+        @keyframes fade1{
+            0% {opacity: 0;z-index: 1;}
+            33% {opacity: 1;z-index: 1;}
+            66% {opacity: 1;z-index: 0;}
+            99.99% {opacity: 0;z-index: 0;}
+            100% {opacity: 0;z-index: 0;}
+        }
+
+        @keyframes fade2{
+            0% {opacity: 0;z-index: 0;}
+            33% {opacity: 0;z-index: 1;}
+            66% {opacity: 1;z-index: 1;}
+            99.99% {opacity: 1;z-index: 0;}
+            100% {opacity: 0;z-index: 0;}
+        }
+
+        @keyframes fade3{
+            0% {opacity: 0;z-index: 0;}
+            33% {opacity: 0;z-index: 0;}
+            66% {opacity: 0;z-index: 1;}
+            99.99% {opacity: 1;z-index: 1;}
+            100% {opacity: 1;z-index: 0;}
+        }
+
+        .slide div{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 300px;
+            transform: translate(-50%, -50%);
+            border: 2px solid #000;
+            z-index: 99999;
+        }
+        div h3{
+            text-align: center;
+            
+        }
+        div p{
+            text-align: center;
+        }
+        .tr{
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+        <div class="slide">
+            <ul>
+                <li><img src="images/main_visual.jpg" alt="슬라이드 이미지"></li>
+                <li><img src="images/main_visual2.jpg" alt="슬라이드 이미지"></li>
+                <li><img src="images/main_visual3.jpg" alt="슬라이드 이미지"></li>
+            </ul>
+            <div>
+                <div>
+                    <p class="tr">언택트시대 필수 과정</p>
+                    <h3>비대면 상담</h3>
+                    <h3>비대면검사</h3>
+                    <p>이제 당신의 공간에서 전문상담사를 만나보세요.</p>
+                </div>
+            </div>
+        </div>
+</section>
+</body>
+
+</html>
