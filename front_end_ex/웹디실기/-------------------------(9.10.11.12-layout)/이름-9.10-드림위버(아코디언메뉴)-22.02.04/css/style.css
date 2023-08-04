@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+* {margin: 0;padding: 0;}
+body {background: #ffffff;}
+ul,li {margin: 0;padding: 0;list-style: none;}
+a {color: #333333;}
+.fl {float: left;}
+
+#wrap {width: 1000px;}
+#wrap header{width: 200px; height: 650px; }
+#wrap header h1.logo{width: 200px; height: 100px; background: #ddd; }
+#wrap header .menu{width: 200px; height: 550px; background: rgb(82, 74, 74); }
+
+#wrap #center {width: 800px; height: 650px; background: rgb(173, 169, 169);}

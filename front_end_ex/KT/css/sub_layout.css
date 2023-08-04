@@ -1,0 +1,9 @@
+/* layout */
+#wrap{position:relative;width:100%; margin:0 auto; background:url(../images/bg_olleh_gnb.png) repeat-x 0 0; text-align:left;}
+	#header{position:relative;width:981px; height:101px; margin:0 auto; margin-bottom:30px;}
+	#container{width:981px; margin-top:33px; margin:0 auto; border-bottom:1px solid #cacaca;}
+	#container:after{content:""; display:block; clear:both;}
+		.snb{float:left;width:180px; height:158px;}
+		#content{float:right;width:772px;padding-bottom:20px;}
+	.site{position:relative;width:981px; height:187px; margin:0 auto; padding-top:15px;}
+	#footer{width:981px; height:103px; padding-top:10px;margin:0 auto; border-top:1px solid #cacaca;background:url(../images/footer_logo_d.png) no-repeat 99% 50%;font-size:11px; color:#888; }

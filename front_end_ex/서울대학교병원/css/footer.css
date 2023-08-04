@@ -1,0 +1,4 @@
+/* footer */
+.foot_inner span{display:block;}
+.foot_inner .award{position:absolute;right:0;top:15px;width:415px;}
+.foot_inner .award li{float:left;}

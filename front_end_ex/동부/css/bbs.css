@@ -1,0 +1,30 @@
+@import url(import.css);
+
+/* bbs.css */
+
+/* common */
+body{font-size:15px;font-family:Nanum Gothic,"나눔고딕",sans-serif;text-align:center;}
+a{text-decoration:none;color:#00070e;}
+.Promotion{width:100%;background:url(../images/bg_tBar.jpg) repeat-x 0 0;}
+
+
+/* path */
+.t_Bar{width:980px;margin:120px auto;margin-bottom:10px;}
+.path li{float:left;margin-right:20px;}
+
+/* 보도자료 */
+.bbs{width:980px;margin:0 auto;}
+/* 검색창 */
+.search{float:right;margin-bottom:20px;}
+.search .txt_box{width:232px;height:30px;}
+
+/* 테이블 */
+table{clear:both;width:980px;margin-bottom:15px;}
+table thead th{text-align:center;font-weight:bold;}
+.left{text-align:left;}
+table th,td{line-height:180%;padding:10px;}
+table thead{border-top:2px solid #2e9383;border-left:1px solid #ccc;border-right:1px solid #ccc;}
+table tr{border-bottom:1px solid #ccc;}
+
+/* 페이지 넘어가기 */
+p.num a{margin-right:3px;}

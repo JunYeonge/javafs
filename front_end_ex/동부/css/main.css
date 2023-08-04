@@ -1,0 +1,79 @@
+@import url(import.css);
+
+/* main.css */
+
+/* commom */
+
+body{font-size:12px;font-family:NanumGothic,"나눔고딕",sans-serif;}
+a{text-decoration:none;color:#1c1c1c;}
+
+/* layout */
+
+#wrap{width:100%;}
+	#container{z-index:20;position:relative;width:100%;background:url(../images/bg_mainService.jpg) repeat-x 0 0;}
+	#content{width:985px;margin:0 auto;}
+	#content:after{content:"";display:block;clear:both;}
+		.con_inner{width:985px;margin:0 auto;}
+		.con_inner:after{content:"";display:block;clear:both;}
+		.main_service{width:985px;margin-top:50px;}
+
+
+
+/* main_visual */
+/* 메인비쥬얼(탭메뉴) */
+.tabMenu{position:relative;}
+.tabMenu dt{z-index:20;float:left;position:relative;top:290px;left:650px;margin-right:10px;}
+.tabMenu dd{z-index:10;position:absolute;top:0;left:0;}
+
+
+/* container */
+
+/* 아이콘메뉴 */
+.con_inner .iconM li{float:left;margin-top:20px;margin-right:30px;}
+.con_inner .iconM li span{display:block;margin:110px 0 20px 0;text-align:center;font-weight:bold;font-size:14px;}
+.con_inner .iconM li a{padding:0 100px 95px 10px;}
+.con_inner .iconM li a:hover{background-position:0 0;}
+.icon1 a{background:url(../images/icon1.png) no-repeat 0 -110px;}
+.icon2 a{background:url(../images/icon2.png) no-repeat 0 -110px;}
+.icon3 a{background:url(../images/icon3.png) no-repeat 0 -110px;}
+.icon4 a{background:url(../images/icon4.png) no-repeat 5px -110px;}
+.icon5 a{background:url(../images/icon5.png) no-repeat 0 -110px;}
+.icon6 a{background:url(../images/icon6.png) no-repeat 0 -110px;}
+.icon7 a{background:url(../images/icon7.png) no-repeat 0 -110px;}
+
+/* 주요서비스 */
+.main_service div{position:relative;margin-right:10px;text-align:left;border-top:2px solid #01a78f;}
+.main_service div h3{font-weight:bold;font-size:14px;}
+.main_service div h3,.txt{position:relative;top:198px;left:10px;line-height:170%;}
+.main_service div .more{position:absolute;top:198px;left:196px;}
+.main_service .main1{float:left;width:230px;height:298px;
+					background:url(../images/img1.jpg) no-repeat 0 0;background-color:#f5f5f5;}
+.main_service .main2{float:left;width:230px;height:298px;
+					background:url(../images/img2.jpg) no-repeat 0 0;background-color:#f5f5f5;}
+.main_service .main3{float:left;width:230px;height:298px;
+					background:url(../images/img3.jpg) no-repeat 0 0;background-color:#f5f5f5;}
+.main_service .main4{float:left;width:230px;height:298px;
+					background:url(../images/img4.jpg) no-repeat 0 0;background-color:#f5f5f5;}
+
+
+/* 퀵메뉴 */
+.quickMenu{float:left;width:492px;margin:30px 0;}
+.quickMenu h3{background:url(../images/main_img.png) no-repeat 0 -220px; padding-bottom:9px;
+			text-indent:-9999px;overflow:hidden;}
+.quickMenu li{float:left; padding:9px; margin-right:30px; margin-top:10px;}
+.quickMenu li.q_icon1{margin-left:10px;}
+.q_icon1 a{background:url(../images/qicon1.png) no-repeat 0 0;padding:0 68px 40px 0;}
+.q_icon2 a{background:url(../images/qicon2.png) no-repeat 0 0;padding:0 50px 40px 0;margin-left:15px;}
+.q_icon3 a{background:url(../images/qicon3.png) no-repeat 0 0;padding:0 41px 41px 0;margin-left:15px;}
+.q_icon4 a{background:url(../images/qicon4.png) no-repeat 0 0;padding:0 43px 40px 0;margin-left:10px;}
+.quickMenu li a:hover{background-position:0 -56px;}
+.quickMenu li span{display:block;margin-top:50px;font-weight:bold;font-size:14px;}
+
+/* 뉴스 */
+.news{position:relative;float:right;width:492px;margin-top:30px;}
+.news h3{background:url(../images/main_img.png) no-repeat 0 -242px;padding-bottom:10px;
+			text-indent:-9999px;overflow:hidden;}
+.news p.tt{font-size:17px;font-weight:bold;margin:20px 0 10px;}
+.news p.tb{line-height:170%;font-size:13px;}
+.news p.more{position:absolute;top:0;right:35px;}
+

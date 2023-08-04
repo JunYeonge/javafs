@@ -1,0 +1,20 @@
+/* footer */
+/* foot_nav1 */
+ul.foot_nav1{clear:both;float:left; font-size:11px;}
+ul.foot_nav1 li{float:left;padding-right:5px;}
+ul.foot_icon li{float:right;}
+
+
+/* 페이스북 */
+.foot_icon a{display:block;width:22px; height:22px; text-indent:-9999px; overflow:hidden;padding-left:10px;}
+.f_icon1 a{background:url(../images/f_icon1.png) no-repeat 0 0;}
+.f_icon2 a{background:url(../images/f_icon2.png) no-repeat 0 0;}
+.f_icon3 a{background:url(../images/f_icon3.png) no-repeat 0 0;}
+.f_icon4 a{background:url(../images/f_icon4.png) no-repeat 0 0;}
+.f_icon5 a{background:url(../images/f_icon5.png) no-repeat 0 0;}
+.foot_icon a:hover{background-position:0 -22px;}
+
+/* address */
+.foot_nav2{float:left;/* position:relative; left:0; width:1000px;*/padding-top:7px; }
+.foot_nav2 li{display:inline;margin-right:20px; font-size:11px;}
+.foot_nav2 address span{display:block; padding-top:2px;}

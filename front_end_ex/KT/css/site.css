@@ -1,0 +1,6 @@
+/* site */
+div.site ul{float:left; width:140px;}
+div.site ul li{padding:3px 20px 3px 0;font-size:11px;}
+div.site .list_bold{font-weight:bold;}
+.position_1{position:absolute; right:120px; top:120px;}
+.position_2{position:absolute; right:60px; top:150px;}

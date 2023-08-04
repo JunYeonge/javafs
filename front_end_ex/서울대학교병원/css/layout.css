@@ -1,0 +1,24 @@
+/* layout.css */
+#wrap{width:100%;background:url(../images/bg_wrap.png) repeat-x 0 83px;text-align:left;}
+	#header{position:relative;width:1000px;height:124px;margin:0 auto;}
+	.sta{position:relative;width:100%;background:url(../images/bg_sta.gif) repeat-x 0 60px;}
+		.sta_inner{z-index:10;position:relative;width:1000px;height:356px;margin:0 auto;padding-top:18px;
+					background:url(../images/bg_quick.png) no-repeat 0 60px;}
+	    .sta_inner:after{content:"";display:block;clear:both;}
+	#container{width:914px;margin:0 auto;padding:25px 56px 20px 30px;}
+	#container:after{content:"";display:block;clear:both;}
+		/* main-layout */
+		.content1{float:left;width:464px;}
+		.content2{float:right;width:424px;}
+		
+		/* sub-layout */
+		.snb{float:left;width:230px;background:url(../images/join/bg_menuline.png) no-repeat 227px 0;}
+		#content{position:relative;float:right;width:633px;
+				background:url(../images/join/line_sub.png) no-repeat 0 29px;}
+	#footer{width:100%;border-top:1px solid #c5c5c5;}
+		.foot_inner{position:relative;width:1000px;height:51px;padding-top:15px;margin:0 auto;}
+
+/* sub-layout */
+
+
+

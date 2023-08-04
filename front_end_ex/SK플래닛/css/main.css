@@ -1,0 +1,42 @@
+/* main.css */
+
+/* container */
+/* 메인배너 */
+.main_visual dt{z-index:20; position:relative; left:610px; top:585px; float:left; padding-right:10px;}
+.main_visual dd{z-index:10; position:absolute; left:0; top:0;}
+.main_prev{z-index:20; position:absolute; left:40px; top:470px;}
+.main_next{z-index:20; position:absolute; right:40px; top:470px;}
+
+/* content */
+/* section1*/
+.business_areas,.next_innovation,.mission{float:left; width:280px; height:180px; padding-left:39px; margin-top:50px;}
+.next_innovation,.mission{border-left:1px solid #d6d6d6;}
+.business_areas p,.next_innovation p,.mission p{padding:11px 0 35px;}
+.business_areas li{float:left; padding-right:27px;}
+.next_innovation li{float:left; padding-right:31px;}
+.mission li{float:left; padding-right:50px;}
+.small_banner{float:left;}
+.small_banner dt{z-index:20; position:relative; left:50px;top:220px; float:left; margin-left:5px; }
+.small_banner dd{position:absolute; width:320px; left:959px; top:0px;}
+.banner_prev{position:absolute; right:292px; top:127px;}
+.banner_next{position:absolute; right:15px; top:127px;}
+
+/* section2*/
+.con1{float:left; width:145px; margin:50px 133px 120px 40px;}
+.con1 h2{padding-bottom:20px;}
+.con2{float:left; width:560px; padding-left:40px; margin-top:50px; border-left:1px solid #d6d6d6;}
+.con2 dl{float:left; width:180px;}
+.con2 dl.center{margin:0 10px;}
+.con2 dd strong{display:block; padding-bottom:13px; font-weight:bold;}
+.con2 dt img{height:109px; padding-bottom:15px;}
+.con2 dd {font-size:11px;}
+.con3{float:right; width:322px; height:280px;}
+.con3 ul li{width:159px; float:left; height:102px; padding-top:38px; border-left:1px solid #d6d6d6; text-align:center;}
+.con3 li.line_bottom{border-bottom:1px solid #d6d6d6;}
+
+/* section3*/
+.section3 h3,.section3 p{display:inline; padding:0 30px; font-weight:bold;}
+.section3 span{padding:20px 30px; font-weight:normal;}
+.section3 .press{float:left; padding-top:20px;}
+.section3 .notice{float:left; padding-top:20px; margin-left:70px;}
+.section3 .notice span{padding-left:125px;}

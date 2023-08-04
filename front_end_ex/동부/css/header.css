@@ -1,0 +1,19 @@
+/* header.css */
+	
+#header{z-index:30;position:fixed;left:0;top:0;width:100%;background:url(../images/bg_header.jpg) repeat-x 0 0;}
+		.header_inner{position:relative;width:985px;margin:0 auto;height:120px;}
+		.main_visual{width:1920px;margin:0 auto;height:400px;padding-top:120px;}
+/* header */
+
+/* 로고 */
+.logo{float:left;padding-top:48px;margin-right:78px;}
+
+/* 탑메뉴 */
+.topMenu{position:absolute;top:22px;right:10px;}
+.topMenu dd{float:left;background:url(../images/top_bar.jpg) no-repeat 0 100%;padding:0 10px;}
+.topMenu dd.none{background:none;}
+
+
+/* 주메뉴 */
+.gnb .gnb_menu{float:left;padding:57px 22px 0 22px;}
+.g_sub{padding:10px 0;display:none;}

@@ -1,0 +1,27 @@
+/* footer.css */
+a{text-decoration:none;color:#1c1c1c;}
+
+	#footer{width:100%;background:url(../images/bg_footer.jpg) repeat-x 0 0;margin-top:20px;}
+		.foot_inner{position:relative;width:985px;margin:0 auto;}
+/* footer */
+
+/* 동부웹진, 전자구매시스템 */
+.footBar_L{float:left;}
+.footBar_L li{float:left;background:url(../images/bar_w.jpg) no-repeat 100% 50%;margin-top:10px;}
+.footBar_L li.none{background:none;}
+.footBar_L li a{color:#fff;padding:0 10px;font-size:16px;}
+
+/* 동부그룹계열사 */
+.footBar_R{float:right;}
+
+/* 개인정보처리방침, 사이트맵, 이메일무단수집거부, 내보정보관리규정 */
+.foot_under{clear:both;}
+.foot_under li{float:left;margin:20px 0;}
+.foot_under li a{font-size:14px;margin-right:10px;padding-left:10px;}
+.foot_under li.first a{color:#01a78f;}
+
+/* 주소 */
+address{clear:both;padding-left:10px;font-size:14px;line-height:150%;margin-bottom:50px;}
+
+/* top버튼 */
+.top_btn{position:absolute;left:985px;top:100px;} 

@@ -1,0 +1,8 @@
+/* footer */
+.footer_logo{position:absolute; left:40px; top:43px;}
+.foot_link{float:left; padding-top:35px; padding-left:165px;}
+.foot_link li{float:left; padding-left:10px; padding-right:11px; background:url(../images/bul_a8_bar.gif) no-repeat 100% 50%;}
+.foot_link li.foot_last{background:none;}
+#footer address{clear:both; padding-top:13px; padding-left:175px;}
+#footer form{position:absolute; right:40px; top:34px; }
+#footer form select{width:153px; height:30px; border:1px solid #b1b1b1; color:#b1b1b1; }

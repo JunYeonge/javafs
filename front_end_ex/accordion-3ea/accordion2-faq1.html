@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> accordion2 - 경제,영화,리빙,뷰티 </title>
+    <script src="script/jquery-1.11.3.js"></script>
+<script>
+    $(function(){
+        // .slideUp: 요소 숨기기 
+        // .slideDown: 숨겨진 요소 보여주기
+        // .next(); : 동생 (=뒤에 요소) 
+        var allDt = $('.accordion dt');
+        var allDd = $('.accordion dd');
+        allDd.hide();
+        allDt.click(function(){
+            var clickDt = $(this); // this : (allDt) 이벤트가 발생된 요소
+            var choiceDd = clickDt.next();
+            if(choiceDd.css('display')=='none'){
+               allDd.slideUp(500);  // .hide();
+               choiceDd.slideDown(500); // .show();
+            }
+        });     
+    });
+
+
+
+
+</script>
+
+<style>
+    * {margin: 0; padding: 0;}
+    body {font-family: "돋움",dotum ,sans-serif;
+    font-size:12px; line-height: 1.6; }
+    dl.accordion {width: 400px; margin: 30px auto;}
+    dl.accordion dt {font-weight: bold; 
+    padding:6px 10px; 
+    background: #333; color:#fff;
+    margin-bottom:5px; cursor:pointer;
+    }
+    dl.accordion dd {
+        padding:8px 10px; 
+        background: #eee; 
+        margin:-5px 0 5px 0;
+    }
+</style>
+</head>
+<body>
+    <!-- dl.accordion>dt{경제}+dd -->
+    <dl class="accordion">
+        <dt>경제</dt>
+        <dd>스타트업은 창업 3~5년차에 자금 부족에 시달리는 등  <br />
+             시행착오를 겪는 ‘데스밸리(죽음의 계곡)’를 지납니다.  <br />
+             이 시기를 견디지 못하면 아무리 좋은 기술력, 서비스를  <br />
+             갖고 있다 해도 생존하기 어려운데요.  <br />
+             이들이 세상을 바꿀 수 있도록 응원합니다. 
+        </dd>
+        <dt>영화</dt>
+        <dd>인생사 새옹지마라더니, 누가 영화산업이 침체기를   <br />
+            맞을 줄 알았겠는가. 누구도 영화관 방문하기가 이토록 <br />
+            무서워질 줄 몰랐다.  COVID-19 사태 장기화로  <br />
+            영화관들이 매달 역대 최저 관객수를 기록하는 있다고 한다.  <br />
+            밀폐된 공간을 꺼리는 분위기에 이용자 수가 저하되었다.  
+           
+        </dd>
+        <dt>리빙</dt>
+        <dd>초록이로 싱그러운 거실 만들기 + 베란다 정원 <br />
+            거실 플랜테리어 베란다정원 식물 기록 by 104home  <br />
+            꼭 키워보고 싶던 마다카스카르 자스민을 드디어 주문했어요.  <br />
+            인터넷 구매후기가 좋더니 정말 싱싱한 아이가 도착했더라구요! <br />
+            [출처] 리빙센스  
+        </dd>
+        <dt>뷰티</dt>
+        <dd>2019년 10월 31일, ‘루이 비통 메종 서울  <br />
+            (Louis Vuitton Maison Seoul)’이 오픈했다.   <br />
+            프랭크 게리가 국내 최초로 선보인  작품으로,  <br />
+            상징적인 곡선 유리가 그의 작품임을 알 수 있게 한다.   <br />
+            평소 '종묘' 공간에 대한 영감으로 외관을 설계했다. <br />          
+        </dd>
+    </dl>
+</body>
+</html>

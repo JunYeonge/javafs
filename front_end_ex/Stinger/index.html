@@ -1,0 +1,1241 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>stinger</title>
+
+    <!-- script link -->
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700" rel="stylesheet">
+    
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            //스크롤시
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+                
+                //nav 등장
+                if (scroll >= 700) {
+                    $("nav").stop().animate({ right: "80px" }, 300);
+                } else {
+                    $("nav").stop().animate({ right: "-200px" }, 300);
+                }
+
+                //nav li 색상 변경
+                    if (scroll >= 800 && scroll < 1400) {
+                        $("nav li").eq(1).css({ color: "#d01818", fontWeight: "bold", borderRight: "5px solid #d01818" });
+                    } else {
+                        $("nav li").eq(1).css({ color: "#e1e1e1", fontWeight: "normal", borderRight: "5px solid #e1e1e1" });
+                    }
+                    
+                    if (scroll >= 1400 && scroll < 2300) {
+                        $("nav li").eq(2).css({ color: "#d01818", fontWeight: "bold", borderRight: "5px solid #d01818" });
+                    } else {
+                        $("nav li").eq(2).css({ color: "#e1e1e1", fontWeight: "normal", borderRight: "5px solid #e1e1e1" });
+                    }
+
+                    if (scroll >= 2300 && scroll < 3200) {
+                        $("nav li").eq(3).css({ color: "#d01818", fontWeight: "bold", borderRight: "5px solid #d01818" });
+                    } else {
+                        $("nav li").eq(3).css({ color: "#e1e1e1", fontWeight: "normal", borderRight: "5px solid #e1e1e1" });
+                    }
+
+                    if (scroll >= 3200 && scroll < 4200) {
+                        $("nav li").eq(4).css({ color: "#d01818", fontWeight: "bold", borderRight: "5px solid #d01818" });
+                    } else {
+                        $("nav li").eq(4).css({ color: "#e1e1e1", fontWeight: "normal", borderRight: "5px solid #e1e1e1" });
+                    }
+
+                    if (scroll >= 4200 && scroll < 5200) {
+                        $("nav li").eq(5).css({ color: "#d01818", fontWeight: "bold", borderRight: "5px solid #d01818" });
+                    } else {
+                        $("nav li").eq(5).css({ color: "#e1e1e1", fontWeight: "normal", borderRight: "5px solid #e1e1e1" });
+                    }
+
+                    if (scroll >= 5200 ) {
+                        $("nav li").eq(6).css({ color: "#d01818", fontWeight: "bold", borderRight: "5px solid #d01818" });
+                    } else {
+                        $("nav li").eq(6).css({ color: "#e1e1e1", fontWeight: "normal", borderRight: "5px solid #e1e1e1" });
+                    }
+            });
+
+            //nav 클릭시 이동
+            $("nav li").eq(0).click(function () {
+                $("html, body").stop().animate({ scrollTop: 0 }, 500);
+            });
+            $("nav li").eq(1).click(function () {
+                $("html, body").stop().animate({ scrollTop: 830 }, 500);
+            });
+            $("nav li").eq(2).click(function () {
+                $("html, body").stop().animate({ scrollTop: 1480 }, 500);
+            });
+            $("nav li").eq(3).click(function () {
+                $("html, body").stop().animate({ scrollTop: 2400 }, 500);
+            });
+            $("nav li").eq(4).click(function () {
+                $("html, body").stop().animate({ scrollTop: 3350 }, 500);
+            });
+            $("nav li").eq(5).click(function () {
+                $("html, body").stop().animate({ scrollTop: 4545 }, 500);
+            });
+            $("nav li").eq(6).click(function () {
+                $("html, body").stop().animate({ scrollTop: 5500 }, 500);
+            });
+
+
+            //플레이 리스트 클릭시 재생표시
+            $(".track div").click(function () {
+                $("header> img").stop().animate({ opacity: 0 }, 300 );
+                
+                $(".track").removeClass("on");
+                $(this).parent(".track").addClass("on");
+
+                $("#bar").stop().css({ width: "0" });
+                $("#bar").stop().animate({ width: "100%" }, 10000);
+            });
+
+            $("header> img").click(function () {
+                $("header> img").stop().animate({ opacity: 1 }, 300);
+                $("#bar").stop().css({ width: "0" });
+            });
+
+            //플레이 리스트 클릭시 동영상 변경 
+            $(".track").eq(0).find("div").click(function () {
+                $("header video").attr({ src: "./video/perform.mp4" });
+            });
+
+            $(".track").eq(1).find("div").click(function () {
+                $("header video").attr({ src: "./video/style.mp4" });
+            });
+
+            $(".track").eq(2).find("div").click(function () {
+                $("header video").attr({ src: "./video/free.mp4" });
+            });
+
+            
+
+            //performance 탭메뉴
+            $("#perform_btn li").click(function () {
+                var per = $(this).index();
+
+                //메뉴 표시
+                $("#perform_btn li").removeClass("on");
+                $(this).addClass("on");
+
+                //performance 탭메뉴 클릭시 컨텐츠 변화
+                $(".per").stop().animate({ opacity: "0", left: "53%" }, 200, function () {
+                    $(".per").removeClass("on");
+                    $(".per").eq(per).addClass("on");
+                    $(".per").stop().animate({ opacity: "1", left: "50%" }, 300);
+                });
+            });
+
+
+            //more+ 버튼
+            $(".more").mouseenter(function () {
+                $(this).css({ backgroundColor: "#182842" });
+                $(".more a").css({ color: "#e1e1e1", fontWeight: "normal" });
+            });
+            $(".more").mouseleave(function () {
+                $(this).css({ backgroundColor: "initial" });
+                $(".more a").css({ color: "#182842", fontWeight: "bold" });
+            });
+
+
+            //exterior 슬라이드 버튼클릭시
+            $("#ex_btn p").click(function () {
+                var ex = $(this).index();
+
+                //버튼 모양 변경
+                $("#ex_btn p").removeClass("on");
+                $(this).addClass("on");
+
+                //화면 슬라이드
+                var w = $(window).width();
+                var move = ex * -w;
+                $("#ex_img").stop().animate({ left: move }, 300, function () {
+                    //타이틀 텍스트 변경
+                    if (ex == 0) {
+                        $("#ex_title span").text("날렵한 인상과 와이드한 스탠드");
+                        $("#ex_title strong").text("프리미엄 다이나믹 스타일");
+                    } else if (ex == 1) {
+                        $("#ex_title span").text("속도감이 느껴지는 다운포스 디자인");
+                        $("#ex_title strong").text("프리미엄 다이나믹 스타일");
+                    } else if (ex == 2) {
+                        $("#ex_title span").text("고급스럽고 안정적인 후면부");
+                        $("#ex_title strong").text("프리미엄 다이나믹 스타일");
+                    } else if (ex == 3) {
+                        $("#ex_title strong").eq(0).text("360º VR");
+                        $("#ex_title span").html("상기 이미지 색상은 실제 색상과 <br /> 차이가 있을 수 있습니다.");
+                    }
+
+                    //타이틀과 버튼 색상 변경 
+                    if (ex == 2) {
+                        $("#ex_title h2, #ex_title p").css({ color: "#e1e1e1" });
+                        $(".more").css({ border: "2px solid #e1e1e1" });
+                        $(".more a").css({ color: "#e1e1e1", fontWeight: "normal" });
+
+                        $(".more").mouseenter(function () {
+                            $(this).css({ backgroundColor: "#e1e1e1" });
+                            $(".more a").css({ color: "#182842", fontWeight: "bold" });
+                        });
+                        $(".more").mouseleave(function () {
+                            $(this).css({ backgroundColor: "initial" });
+                            $(".more a").css({ color: "#e1e1e1", fontWeight: "normal" });
+                        });
+                    } else {
+                        $("#ex_title h2, #ex_title p").css({ color: "#182842" });
+                        $(".more").css({ border: "2px solid #182842" });
+                        $(".more a").css({ color: "#182842", fontWeight: "bold" });
+
+                        $(".more").mouseenter(function () {
+                            $(this).css({ backgroundColor: "#182842" });
+                            $(".more a").css({ color: "#e1e1e1", fontWeight: "normal" });
+                        });
+                        $(".more").mouseleave(function () {
+                            $(this).css({ backgroundColor: "initial" });
+                            $(".more a").css({ color: "#182842", fontWeight: "bold" });
+                        });
+                    }
+
+                });
+            });
+            
+
+            //버튼 클릭시
+            $("#ex_color p").click(function () {
+                var color = $(this).index();
+                //버튼 on class
+                $("#ex_color p").removeClass("on");
+                $(this).addClass("on");
+
+                //자동차 사진 변경
+                var at = "./image/exterior/" + color + ".png"
+                $("#ex_rot img").eq(0).attr({ src: at });
+
+                //rot_btn 표시
+                $("#ex_rot> img").show();
+                $("#rot_img").hide();
+            });
+
+
+            //버튼 클릭시 색이름 변경
+            $("#ex_color p").eq(0).click(function () {
+                $("#ex_color span").text("하이크로마 레드");
+            });
+            $("#ex_color p").eq(1).click(function () {
+                $("#ex_color span").text("마이크로 블루");
+            });
+            $("#ex_color p").eq(2).click(function () {
+                $("#ex_color span").text("딥 크로마 브루");
+            });
+            $("#ex_color p").eq(3).click(function () {
+                $("#ex_color span").text("오로라 블랙 펄");
+            });
+            $("#ex_color p").eq(4).click(function () {
+                $("#ex_color span").text("판테라 메탈");
+            });
+            $("#ex_color p").eq(5).click(function () {
+                $("#ex_color span").text("스노우 화이트 펄");
+            });
+
+
+            //360도 돌리기
+            $("#rot_btn").click(function () {
+                $("#rot_btn").hide();
+
+                var imgs = ""
+                for (var i = 0; i < 36; i++ ) {
+                    imgs += "<img src= './image/360/H4R_" + i + ".jpg'>"
+                }
+
+                $("#rot_img").html(imgs);
+                $("#rot_img").show();
+                $("#ex_rot img").eq(0).hide();
+
+                $("#ex_rot").mousemove(function (e) {
+                    
+                    var wid = $("#ex_rot").width();
+                    var xpos = e.pageX;
+                    var i = Math.floor((xpos / wid) * 34 - 7);
+
+                    $("#rot_img img").hide();
+                    $("#rot_img img").eq(i).show();
+                });
+            });
+
+
+            /************************************************************************************************************************************/
+
+            //interior popup
+            $("#inbtn li").click(function () {
+                var p = $(this).index();
+
+                //popup창 애니메이션
+                $(".insub").eq(p).css({ display: "block" });
+                $(".insub").stop().animate({ opacity: "1" }, 300);
+                
+                //text 애니메이션
+                $(".insub p:nth-child(4), .insub p:nth-child(5)").stop().animate({ opacity: 1, marginLeft: 0 },500);
+            });
+
+            //popup창 닫기
+            $("#inbtnpopup img").click(function () {
+                $(".insub p:nth-child(4), .insub p:nth-child(5)").stop().animate({ opacity: 0, marginLeft: "-40px" }, 300, function () {
+                    $(".insub").stop().animate({ opacity: 0 }, 300, function () {
+                        $(".insub").css({ display: "none" });
+                    });
+                });
+                
+            });
+
+
+
+            //safety btn
+            var s = 0;
+            //오른쪽 버튼
+            $("#safebtn img:nth-child(2)").click(function () {
+                if (s < 4) {
+                    s++;
+                    var move = -1100 * s;
+                    $("#safeboxwrap, #safeboxwrap div p span").stop().animate({ marginLeft: move }, 500);
+                } else {
+                    false;
+                }
+                $("#safesubbox p img").removeClass()
+                $("#safesubbox p img").eq(s).addClass("on")
+            });
+            //왼쪽 버튼
+            $("#safebtn img:nth-child(1)").click(function () {
+                if (s > 0) {
+                    s--;
+                    var move = -1100 * s;
+                    $("#safeboxwrap, #safeboxwrap div p span").stop().animate({ marginLeft: move }, 500);
+                } else {
+                    false;
+                }
+                $("#safesubbox p img").removeClass()
+                $("#safesubbox p img").eq(s).addClass("on")
+            });
+
+            //safety sub click
+            $("#safesubbox p").click(function () {
+                var ssub = $(this).index();
+                $("#safesubbox p img").removeClass()
+                $("#safesubbox p img").eq(ssub).addClass("on")
+
+                var move = -1100 * ssub;
+                $("#safeboxwrap, #safeboxwrap div p span").stop().animate({ marginLeft: move }, 500);
+                s = ssub;
+            });
+
+            //자동차
+            $(window).scroll(function () {
+                var p = $("html").scrollTop();
+                if (p >= 5000) {
+                    $("#pur p:nth-child(5)").stop().animate({ left: "600px" }, 1000);
+                } else {
+                    $("#pur p:nth-child(5)").stop().animate({ left: "1800px" }, 1000);
+                }
+
+            });
+        });
+
+    </script>
+
+
+
+
+    <style>
+        /**************** RESET CSS ****************/
+        * { margin: 0; padding: 0; }
+        li { list-style: none; }
+        a { text-decoration: none; color: #182842;}
+        img { border: 0; }
+        body { font-family: 'Noto Sans KR', sans-serif; }
+
+
+        /**************** animation ****************/
+        @keyframes rot {
+            0% { transform: rotate(0); }
+            100% { transform: rotate(360deg); }
+        }
+
+
+        /**************** nav ****************/
+        nav { width: 180px; position: fixed; top: 80px; right: -200px; z-index: 9; }
+        nav li { color: #e1e1e1; text-align: right; font-size: 1.2em; font-style: italic; padding-right: 15px; margin-bottom: 12px; border-right: 5px solid #e1e1e1; text-shadow: 0 0 1px rgba(0, 0, 0, 0.4); cursor: pointer; letter-spacing: -1px; transition-duration: 0.2s; }
+
+
+        /**************** header ****************/
+        header { width: 100%; height: 830px; background-color: #182842; position: relative; }
+        header video { width: 100%; position: absolute; top: -50px; left: 0; text-align: center; min-width: 1600px; cursor: pointer; }
+        header> img { width: 100%; position: absolute; top: -200px; left: 0; min-width: 1900px; cursor: pointer; }
+            #bar { width: 0%; height: 5px; background-color: #d01818; position: absolute; bottom: 0; opacity: 0.7; }
+
+            /**************** logo ****************/
+            #header_logo { width: 100%; height: 150px; position: absolute; line-height: 90px;}
+            #header_logo img {  position: absolute; top: 0; }
+            #header_logo img:nth-child(1) { width: 100%; }
+            #header_logo img:nth-child(2) {  width: 400px; top: 20px; left: 50%; margin-left: -200px;}
+
+            /**************** playlist ****************/
+            #header_list { width: 500px; position: absolute; bottom: 60px; right: 150px; }
+            #header_list h4 { font-size: 1.2em; color: #e1e1e1; font-style:italic; text-align: right; margin-bottom: 15px; margin-right: 10px; }
+
+                .track { width: 150px; display: inline-block; margin-right: 20px; }
+                .track03 { margin-right: 0; }
+                .track div { width: 100%; height: 75px; position: relative; overflow: hidden; box-shadow: 0 0 7px rgba(0, 0, 0, 0.5); }
+                .track img { width: 100%;}
+                .track div p { width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); position: absolute; top: 0; left: 0; opacity: 0; cursor: pointer; transition-duration: 0.2s; }
+                .track div p i { position: absolute; top: 30px; left: 65px; color: #fff; font-size: 1.2em; opacity: 0.7; }
+                .track h5 { color: #e1e1e1; text-align: center; font-size: 0.9em; font-style: italic; margin-top: 5px; }
+                
+            /*** on ***/
+            .track.on div p { opacity: 1; }
+
+            /*** hover ***/
+            .track div:hover p { opacity: 1; }
+
+        /**************** title ****************/
+        #perform h2 { width: 1300px; margin: 0 auto; padding-top: 90px; font-size: 2.8em; letter-spacing: -1px; font-style: italic; }
+
+
+        /**************** performance ****************/
+        #perform { width: 100%; height: 650px; background-color:#182842; position: relative; }
+        #perform h2 {  color: #e1e1e1;}
+
+            /**************** btn ****************/
+            #perform_btn { width: 450px; position: absolute; top: 115px; left: 50%; margin-left: -225px; }
+            #perform_btn li { height: 30px; display: inline-block; font-size: 30px; color: #e1e1e1; padding: 0 15px; border-right: 2px solid #e1e1e1; line-height: 30px; text-align: center; cursor: pointer; }
+            #perform_btn li:last-child { border-right: none; }
+            
+            /*** on class ***/
+            #perform_btn li.on p { background-color: #d01818; }
+
+            /**************** perform_wrap ****************/
+            #perform_wrap { width: 1300px; margin: 60px auto; position: relative; }
+
+            .per { position: absolute; top: 0;left: 50%; overflow: hidden; display: none; }
+            .per li { float: left;  text-align: center; }
+            .per p { font-size: 1.2em; color: #e1e1e1; }
+            .per p strong { font-size: 1.5em; }
+
+            /*** on class ***/
+            .per.on { display: block; }
+
+                /**************** basic ****************/
+                .per01 { width: 100%; margin: 50px 0 0 -650px; }
+                .per01 li { width: 260px; }
+                .per01 li img { width: 60%; }
+
+                /**************** turbo ****************/
+                .per02 { width: 1050px; margin: 20px 0 0 -525px; }
+                .per02 li { width: 350px; }
+                .per02 li img { width: 60%; }
+
+                /**************** controls ****************/
+                .per03 { width: 1050px; margin-left: -525px; }
+                .per03 li { width: 250px; margin-right: 150px;}
+                .per03 li:last-child { margin-right: 0; }
+                .per03 li img { width: 80%; }
+                .per03 p { font-size: 0.9em; font-weight: 100; }
+                .per03 p strong { display: block;}
+
+            
+        /**************** exterior ****************/
+        #ex { width: 100%; height: 920px; position: relative; background-color: #fff; overflow: hidden;}
+
+            /**************** ex_img ****************/
+            #ex_img {  width: 400%; height: 100%; position: absolute; top: 0; left: 0; }
+
+                .ex { width: 25%; height: 100%; float: left; position: relative; overflow:hidden; background-position: center; background-size: cover;}
+                .ex img { width: 100%; }
+                .ex> img { min-width: 1920px; }
+
+                .ex01 { background-image: url(./image/exterior/ex01.jpg); }
+                .ex02 { background-image: url(./image/exterior/ex02.jpg); }
+                .ex03 { background-image: url(./image/exterior/ex03.jpg); }
+
+                /**************** ex04 rotate ****************/
+                .ex04 img { min-width : initial; }
+                
+                #ex_color { width: 700px; position: absolute; top: 150px; left: 50%; margin-left: -350px; z-index: 10; text-align: center;}
+                #ex_color p { width: 30px; height: 30px; border: 2px solid #b4b4b4; border-radius: 20px; display: inline-block; margin-right: 30px; cursor: pointer; }
+
+                #ex_color p:nth-child(1) { background-color: #83201a; }
+                #ex_color p:nth-child(2) { background-color: #154688; }
+                #ex_color p:nth-child(3) { background-color: #0d1129; }
+                #ex_color p:nth-child(4) { background-color: #2d2d2d; }
+                #ex_color p:nth-child(5) { background-color: #484848; }
+                #ex_color p:nth-child(6) { background-color: #f9f9fa; }
+                
+                #ex_color span { font-weight: 100; position: absolute; top: 6px; }
+
+                    /*** on class ***/
+                    #ex_color p.on { transform: scale(1.3); transition-duration: 0.2s; }
+
+                #ex_rot { width: 1300px;margin: 300px auto; text-align: center; position: relative; }
+                #ex_rot img:first-child { width: 85%; }
+                    #rot_img { position: absolute; top: 0; left: 0; width: 100%; display: none; }
+                    #rot_img img { width: 85%; }
+                    #rot_btn {  width: 60px; height: 60px; position: absolute; top: 50px; left: 50%;  margin-left: -30px; opacity: 0.7; transition-duration: 0.2s; cursor: pointer; }
+
+                    /*** hover ***/
+                    #rot_btn:hover { opacity: 1;  animation: rot 2s linear infinite normal; }
+
+
+            /**************** ex_title ****************/
+            #ex_title { width: 1300px; position: absolute; left: 50%; margin-left: -650px; }
+            #ex_title h2 { color: #182842; letter-spacing: -3px; width: 1300px; margin: 0 auto; padding-top: 90px; font-size: 2.8em; letter-spacing: -1px; font-style: italic; }
+            #ex_title p:nth-child(2) { font-size: 1.3em; color: #182842; font-weight: 100; }
+            #ex_title strong { font-size: 1.4em; }
+
+                .more { font-size: 1.3em; width: 100px; height: 30px; border: 2px solid #182842; border-radius: 18px; margin: 15px 0 0 -2px; text-align: center; letter-spacing: -1px;}
+                .more a {display: block; font-weight: bold; font-style: italic; font-size: 0.9em;}
+
+            /**************** ex_btn ****************/
+            #ex_btn { width: 996px; height: 3px; position: absolute; bottom: 60px; left: 50%; margin-left: -498px; background-color: #e1e1e1; }
+            #ex_btn p { width: 24px; height: 24px; background-color: #e1e1e1; float: left; border-radius: 12px; margin: -11px 300px 0 0; cursor: pointer; }
+            #ex_btn p:last-child { margin-right: 0; }
+            
+            /*** on class ***/
+            #ex_btn p.on { transform: scale(1.3); background-color: #d01818; transition-duration: 0.2s; }
+            
+        
+            /************************************************************************************************************************************************************************/
+
+
+            /* interior */
+        #in { width:100%; height:950px; position:relative; overflow:hidden; }
+            #inimg { position:absolute; top:0; width:100%; height:100%; overflow:hidden; min-width:1920px; }
+            #inimg img { width:100%; }
+            #intext { position:absolute; top:50px; left:50%; color:#fff; width:1300px; margin-left:-650px; }
+            #intext h2 { font-size:2.5em; }
+            #intext p { font-size:0.9em; }
+            #intext span { font-size:1.5em; }
+            #inbtn li:nth-child(1) { position:absolute; top:290px; left:500px; }
+            #inbtn li:nth-child(2) { position:absolute; top:360px; left:600px; }
+            #inbtn li:nth-child(3) { position:absolute; top:220px; left:1050px; }
+            #inbtn li:nth-child(4) { position:absolute; top:360px; left:1080px; }
+            #inbtn li:nth-child(5) { position:absolute; top:415px; left:1350px; }
+            #inbtn li:nth-child(6) { position:absolute; top:740px; left:1370px; }
+                #inbtn img { width:40px; height:40px; opacity:0.7; cursor:pointer; }
+
+            /* interior sub */
+            .insub { position:fixed; top:0; width:100%; height:100%; overflow:hidden; z-index:10; opacity: 0; }
+                .insub p:nth-child(1) img { width:100%; min-width:1920px; }
+                #inbtnpopup { position:absolute; top:100px; right:200px; cursor:pointer; z-index:1; }
+                #inbtnpopup img { width:30px; height:30px; }
+                .insub p:nth-child(3) { width:100%; position:absolute; top:50%; left:9px; margin-top:-465px; }
+                .insub p:nth-child(3) img { width:100%; }
+                .insub p:nth-child(4) { position:absolute; width:10px; height:30px; background-color:#d01818; margin-left: -40px; opacity: 0; }
+                .insub p:nth-child(5) { position:absolute; margin-left: -40px; opacity: 0;}
+                .insub p:nth-child(5) strong { font-size: 1.5em;}
+
+                /* 1 */
+                .insub01 p:nth-child(4) { top:250px; left:800px; }
+                .insub01 p:nth-child(5) { top:247px; left:820px; }
+                /* 2 */
+                .insub02 p:nth-child(4) { top:400px; left:800px;}
+                .insub02 p:nth-child(5) { top:397px; left:820px; }
+                /* 3 */
+                .insub03 p:nth-child(4) { top:390px; left:850px; }
+                .insub03 p:nth-child(5) { top:387px; left:870px; }
+                /* 4 */
+                .insub04 p:nth-child(4) { top:470px; left:850px; }
+                .insub04 p:nth-child(5) { top:467px; left:870px; }
+                /* 5 */
+                .insub05 p:nth-child(4) { top:500px; left:1080px; }
+                .insub05 p:nth-child(5) { top:497px; left:1100px; }
+                /* 6 */
+                .insub06 p:nth-child(4) { top:610px; left:1080px; }
+                .insub06 p:nth-child(5) { top:607px; left:1100px; }
+                
+                /** hover **/
+                #inbtn li img:hover { opacity:1; }
+
+                .insub01 { display:none; }
+                .insub02 { display:none; }
+                .insub03 { display:none; }
+                .insub04 { display:none; }
+                .insub05 { display:none; }
+                .insub06 { display:none; }
+                
+
+
+
+        /* convenience */
+        #con { width:100%; }
+            #conwrap { width:1300px; margin:100px auto; margin-bottom:0; }
+            #context {  }
+            #context h2 { font-size:2.5em; letter-spacing: -2px; }
+            #context strong { font-size:1.5em; }
+            #context p { font-size:0.9em; color:#5d5d5d; }
+            .conbox { width:400px; height:400px; display:inline-block; margin-top:40px; margin-left:45px; }
+            .conbox p:first-child { width:400px; height:280px; background-color:#5d5d5d; overflow:hidden; cursor:pointer; }
+            .conbox p:first-child img { width:100%; transition-duration:0.5s; }
+            .conbox05 img { height:100%; }
+            .conbox p:last-child { margin-top:18px; text-align:center; font-size:0.9em; }
+            .conbox p:last-child strong { font-size:1.2em; }
+            .conbox01, .conbox04 { margin-left:0; }
+            /** hover **/
+            .conbox p:first-child img:hover { transform:scale(1.2); }
+
+
+
+        /* safety */
+        #safe { width:100%; height:1100px; position:relative; }
+            #safewrap { height:1070px; margin:100px auto; margin-bottom:0; background-color:#182842; }
+            #safetext { width:1300px; color:#fff; margin:0 auto; padding-top:50px; }
+            #safetext h2 { font-size:2.5em; }
+            #safetext p { font-size:1.5em; }
+            #safebtn { width:1300px; margin:0 auto; cursor:pointer; }
+            #safebtn img:nth-child(1) { position:absolute; top:450px; left:50%; margin-left:-650px; width:80px; height:80px; }
+            #safebtn img:nth-child(2) { position:absolute; top:450px; right:50%; margin-right:-650px; width:80px; height:80px; }
+            #safeboxmask { position:absolute; top:200px; left:50%; width:1100px; height:600px; margin-left:-550px; overflow:hidden; }
+            #safeboxwrap { width:5500px; height:600px; overflow:hidden; }
+            #safeboxwrap div { width:1100px; height:600px; overflow:hidden; float:left; }
+            #safeboxwrap div.on { display:block; }
+            #safeboxwrap div img { width:100%; margin-top:-220px; }
+            #safeboxwrap div p { width:1100px; height:150px; background-color:rgba(0, 0, 0, 0.7); color:#fff; }
+            #safeboxwrap div:nth-child(1) p { position:absolute; bottom:0; left:0; }
+            #safeboxwrap div:nth-child(2) p { position:absolute; bottom:0; left:1100px; }
+            #safeboxwrap div:nth-child(3) p { position:absolute; bottom:0; left:2200px; }
+            #safeboxwrap div:nth-child(4) p { position:absolute; bottom:0; left:3300px; }
+            #safeboxwrap div:nth-child(5) p { position:absolute; bottom:0; left:4400px; }
+            #safeboxwrap div p span { position:absolute; top:45px; left:50px; }
+            #safeboxwrap div strong { position:absolute; bottom:60px; font-size:1.2em; }
+            #safeboxwrap div:nth-child(1) strong { bottom:35px; }
+            #safesubbox { position:absolute; top:820px; left:50%; width:1100px; margin-left:-550px; height:130px; }
+            #safesubbox p { width:200px; height: 130px; margin-left:21px; background-color:#fff; display:inline-block; overflow:hidden; }
+            #safesubbox p img { width:100%; opacity:0.6; cursor:pointer; }
+            #safesubbox p img.on { opacity:1; }
+            #safesubbox p:first-child { margin-left:0; }
+
+
+
+        /* purchase */
+        #pur { width:100%; height:700px; position:relative; overflow:hidden; }
+            #pur h2 { width:1300px; position:absolute; top:50px; left:50%; margin-left:-650px; font-size:2.5em; letter-spacing: -2px; }
+            #pur p:nth-child(2) { width:1300px; position:absolute; top:300px; left:50%; margin-left:-650px; font-size:1.8em; }
+            #pur p:nth-child(3) { width:60px; height:60px; position:absolute; top:418px; left:50%; margin-left:-650px; }
+            #pur p:nth-child(3) img { width:100%; }
+            #pur p:nth-child(4) { width:55px; height:55px; position:absolute; top:415px; left:50%; margin-left:-550px; cursor:pointer; }
+            #pur p:nth-child(4) img { width:100%; }
+            #pur p:nth-child(5) { position:absolute; top:-150px; left:1800px; width:1600px; }
+            #pur p:nth-child(5) img { width:100%; }
+            #pur p:nth-child(6) { position:absolute; top:470px; left:50%; margin-left:-652px; color:#182842; font-weight:bold; }
+            #pur p:nth-child(7) { position:absolute; top:470px; left:50%; margin-left:-557px; color:#182842; font-weight:bold;}
+
+
+
+         /* footer */
+         footer {width:100%; height:60px; background-color:#182842; position:relative; }
+            #foot { position:absolute; top:12px; overflow:hidden; }
+            #foot li { float:left; margin-left:30px; }
+            #foot li:first-child { margin-left:100px; }
+            #foot em { color:#b4b4b4; font-weight:bold; font-size:1.5em; cursor:pointer; }
+
+            #footsns { position:absolute; top:18px; right:0; overflow:hidden; cursor:pointer; }
+            #footsns li { float:right; height:25px; margin-right:30px; }
+            #footsns li:first-child { margin-right:100px; }
+            #footsns img { height:100%; color:#b4b4b4; }
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+    <!---------------- nav ----------------->
+    <nav>
+        <ul>
+            <li>TOP</li>
+            <li>PERFORMANCE</li>
+            <li>EXTERIOR</li>
+            <li>INTERIOR</li>
+            <li>CONVENIENCE</li>
+            <li>SAFETY</li>
+            <li>PURCHASE</li>
+        </ul>
+    </nav>
+
+    <!---------------- header ----------------->
+    <header>
+
+        <!------------------ 비디오 ----------------->
+        <video src="./video/free.mp4" autoplay="autoplay"></video>
+        <img src="./image/main/main.jpg" />
+        <p id="bar"></p>
+
+        <!------------------ 로고 ----------------->
+        <div id="header_logo">
+            <img src="./image/main/black.png" />
+            <img src="./image/main/logo.png" />
+        </div>
+
+        <!------------------ 플레이리스트 ----------------->
+        <div id="header_list">
+            <h4>PLAY LIST</h4>
+            <div class ="track track01">
+                <div>
+                    <img src="./image/main/performance.jpg" />
+                    <p><i class="fas fa-play"></i></p>
+                </div>
+                <h5>PERFORMANCE</h5>
+            </div> 
+
+            <div class="track track02">
+                <div>
+                    <img src="./image/main/style.jpg" />
+                    <p><i class="fas fa-play"></i></p>
+                </div>
+                <h5>STYLE</h5>
+            </div>
+
+            <div class="track track03">
+                <div>
+                    <img src="./image/main/freelaunching.jpg" />
+                    <p><i class="fas fa-play"></i></p>
+                </div>
+                <h5>FREE LAUNCHIG</h5>
+            </div>
+        </div>
+
+    </header>
+
+    <!---------------- performance ----------------->
+    <div id="perform">
+        
+        <h2>PERFORMANCE</h2>
+
+        <!------------------ 탭버튼 ----------------->
+        <ul id="perform_btn">
+            <li class="on"><p>BASIC</p></li>
+            <li><p>TURBO</p></li>
+            <li><p>CONTROLS</p></li>
+        </ul>
+
+        <!------------------ 탭메뉴 컨텐츠 ----------------->
+        <div id="perform_wrap">
+
+            <!------------------ BASIC ----------------->
+            <ul class="per per01 on">
+                <li>
+                    <img src="./image/icon/perfob01.png" />
+                    <p>
+                        FROM 차량기본가격<br />
+                        <strong>35,050,000원</strong>
+                    </p>
+                </li>
+
+                <li>
+                    <img src="./image/icon/perfob02.png" />
+                    <p>
+                        UP TO 복합연비<br />
+                        <strong>14.8 km/l</strong>
+                    </p>
+                </li>
+
+                <li>
+                    <img src="./image/icon/perfob03.png" />
+                    <p>
+                        UP TO 배기량<br />
+                        <strong>3,342 cc</strong>
+                    </p>
+                </li>
+
+                <li>
+                    <img src="./image/icon/perfob04.png" />
+                    <p>
+                        UP TO 최고출력<br />
+                        <strong>370ps/6,000rpm</strong>
+                    </p>
+                </li>
+
+                <li>
+                    <img src="./image/icon/perfob05.png" />
+                    <p>
+                        무상 보증 기간<br />
+                        <strong>3년/60,000km</strong>
+                    </p>
+                </li>
+            </ul>
+
+            <!------------------ TURBO ----------------->
+            <ul class="per per02">
+                <li>
+                    <img src="./image/icon/perfot01.png" />
+                    <p>
+                        가솔린 2.0 터보 GDI<br />
+                        <strong>370 ps / 52 kgf&bull;m</strong>
+                    </p>
+                </li>
+
+                <li>
+                    <img src="./image/icon/perfot02.png" />
+                    <p>
+                        가솔린 v6 3.3 트윈터보 GDI<br />
+                        <strong>255 ps / 36 kgf&bull;m</strong>
+                    </p>
+                </li>
+
+                <li>
+                    <img src="./image/icon/perfot03.png" />
+                    <p>
+                        디젤 2.2<br />
+                        <strong>202 ps / 45 kgf&bull;m</strong>
+                    </p>
+                </li>
+            </ul>
+
+            <!------------------ CONTROLS ----------------->
+            <ul class ="per per03">
+                <li>
+                    <img src="./image/icon/perfoc01.png" />
+                    <p>
+                        <strong>전자제어 서스펜션</strong><br />
+                        차량의 주행 조건 및 노면에 따라 실시간으로 서스펜션의 감쇠력을 제어하여 승차감과 안정성을 높여 줍니다<br />
+                    </p>
+                </li>
+
+                <li>
+                    <img src="./image/icon/perfoc02.png" />
+                    <p>
+                        <strong>전자제어 사륜구동 시스템</strong><br />
+                        도로 접지력이 우수해 코너링 시에도
+                        안정적으로 주행할 수 있으며, 주행 모드에 따른 차별적 바퀴 구동력 배분으로 드리프트가 가능합니다<br />
+                    </p>
+                </li>
+
+                <li>
+                    <img src="./image/icon/perfoc03.png" />
+                    <p>
+                        <strong>브림보 브레이크</strong><br />
+                        화려한 레드 컬러의 고강성 브렘보 캘리퍼를 적용하여 강력한 제동 성능을 구현하였습니다<br />
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!---------------- exterior ----------------->
+    <div id="ex">
+        
+        <!------------------ 슬라이드 이미지 ----------------->
+        
+        <div id="ex_img">
+            <div class="ex ex01"></div>
+            <div class="ex ex02"></div>
+            <div class="ex ex03"></div>
+
+            <div class="ex ex04">
+                <div id="ex_color">
+                    <p class="on"></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <span>하이크로마 레드</span>
+                </div>
+                <div id="ex_rot">
+                    <img src="./image/exterior/0.png" />
+                    <p id="rot_img"></p>
+                    <img id="rot_btn" src="./image/icon/exbtn03.png" />
+                </div>
+                
+            </div>
+        </div>
+
+        <!------------------ 타이틀 ----------------->
+        <div id="ex_title">
+            <h2>EXTERIOR</h2>
+            <p>
+                <strong>프리미엄 다이나믹 스타일</strong><br />
+                <span>날렵한 인상과 와이드한 스탠드</span>
+            </p>
+            <p class="more"><a href="./sub.html">+ MORE</a></p>
+        </div>
+
+        <!------------------ 슬라이드 버튼 ----------------->
+        <div id="ex_btn">
+            <p class="on"></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+
+    </div>
+
+    <!---------------- interior ----------------->
+    <div id="in">
+
+        <div id="inimg">
+            <img src="./image/interior/01.jpg">
+        </div>
+
+        <div id="intext">
+            <h2><em>INTERIOR</em></h2>
+            <p>
+                <span>항공기 모티브의 프리미엄 인테리어</span> <br />
+                항공기의 한쪽 날개를 형상화한 크래시 패드, 항공기 엔진을 닮은 스포크 타입의 원형 에어벤트 등<br />
+                풍부한 아날로그 감성을 기반으로 완성된 비행기 조종석 모티브의 프리미엄 인테리어
+            </p>
+        </div>
+
+        <div id="inbtn">
+            <ul>
+                <li><img src="./image/icon/plusbtn.png"></li>
+                <li><img src="./image/icon/plusbtn.png"></li>
+                <li><img src="./image/icon/plusbtn.png"></li>
+                <li><img src="./image/icon/plusbtn.png"></li>
+                <li><img src="./image/icon/plusbtn.png"></li>
+                <li><img src="./image/icon/plusbtn.png"></li>
+            </ul>
+        </div>
+
+        <!-- 내부 서브 -->
+        <div id="popup">
+
+            <!-- 내용 -->
+            <!-- 1 -->
+            <div class="insub insub01">
+                <!-- img -->
+                <p><span><img src="./image/interior/05.jpg"></span></p>
+                <!-- btn -->
+                <p id="inbtnpopup">
+                    <img src="./image/icon/subbtn03.png">
+                </p>
+                <!-- 서브이미지 -->
+                <p>
+                    <img src="./image/interior/in02.png">
+                </p>
+                <!-- text -->
+                <p></p>
+                <p>
+                    <strong>스포티 클러스터</strong><br />
+                    차랸 상태 및 다양한 주행 정보를 7인치 컬러 TFT LCD 패널로<br />
+                    전달함으로써 운전을 안전하고 편리하게 도와드립니다.<br />
+                    특히 게이지의 숫자를 기울임으로 표현하는 등 스포티에<br />
+                    특화된 디자인을 적용함으로써 차량의 고유한 특징을 살렸습니다.
+                </p>
+            </div>
+
+            <!-- 2 -->
+            <div class="insub insub02">
+                <!-- img -->
+                <p><img src="./image/interior/05.jpg"></p>
+                <!-- btn -->
+                <p id="inbtnpopup">
+                    <img src="./image/icon/subbtn03.png">
+                </p>
+                <!-- 서브이미지 -->
+                <p>
+                    <img src="./image/interior/in01.png">
+                </p>
+                <!-- text -->
+                <p></p>
+                <p>
+                    <strong>D컷 스티어링휠</strong><br />
+                    운전자가 직접 운전자와의 거리 및 각도를 조절할 수 있고,<br />
+                    손쉬운 조작을 위하여 유압장치나 전동 모터가 장착되었고<br />
+                    이곳에 에어백, 오디오컨트롤러가 내장되어 안전하고 편리하게 도와드립니다.
+                </p>
+            </div>
+
+            <!-- 3 -->
+            <div class="insub insub03">
+                <!-- img -->
+                <p><img src="./image/interior/05.jpg"></p>
+                <!-- btn -->
+                <p id="inbtnpopup">
+                    <img src="./image/icon/subbtn03.png">
+                </p>
+                <!-- 서브이미지 -->
+                <p>
+                    <img src="./image/interior/in03.png">
+                </p>
+                <!-- text -->
+                <p></p>
+                <p>
+                    <strong>심리스 플로팅타입 8인치 네비게이션</strong><br />
+                    내비게이션 기능의 윈드쉴드 글라스에 입체감 있는 그래픽과 다양한<br />
+                    주행정보를 투영시켜 보여줌으로써 운전자의 시선 이동을 최소화하고<br />
+                    운전 자세를 추천하는 시스템으로 안전한 운전을 도와 드립니다.
+                </p>
+            </div>
+
+            <!-- 4 -->
+            <div class="insub insub04">
+                <!-- img -->
+                <p><img src="./image/interior/05.jpg"></p>
+                <!-- btn -->
+                <p id="inbtnpopup">
+                    <img src="./image/icon/subbtn03.png">
+                </p>
+                <!-- 서브이미지 -->
+                <p>
+                    <img src="./image/interior/in04.png">
+                </p>
+                <!-- text -->
+                <p></p>
+                <p>
+                    <strong>트리플 서클 타입 에어벤트 그릴</strong><br />
+                    클래식한 감성의 써클타입 형상에 반광크롬 재질 적용으로 고급감 밎<br />
+                    감성품질을 향상 하였습니다.
+                </p>
+            </div>
+
+            <!-- 5 -->
+            <div class="insub insub05">
+                <!-- img -->
+                <p><img src="./image/interior/05.jpg"></p>
+                <!-- btn -->
+                <p id="inbtnpopup">
+                    <img src="./image/icon/subbtn03.png">
+                </p>
+                <!-- 서브이미지 -->
+                <p>
+                    <img src="./image/interior/in06.png">
+                </p>
+                <!-- text -->
+                <p></p>
+                <p>
+                    <strong>6칼라 인테리어 무드조명</strong><br />
+                    개인의 취향에 따라 흰색, 주황색, 빨간색, 파란색, 보라색, 녹색으로 설정가능<br />
+                    하며, 드라이브 모드 변동 기능을 선택하면 무드 조명이 주행 특성에 따라<br />
+                    자동으로 변경되며 조명의 밝기를 1단계부터 4단계까지 선택할 수 있습니다.
+                </p>
+            </div>
+
+            <!-- 6 -->
+            <div class="insub insub06">
+                <!-- img -->
+                <p><img src="./image/interior/05.jpg"></p>
+                <!-- btn -->
+                <p id="inbtnpopup">
+                    <img src="./image/icon/subbtn03.png">
+                </p>
+                <!-- 서브이미지 -->
+                <p>
+                    <img src="./image/interior/in05.png">
+                </p>
+                <!-- text -->
+                <p></p>
+                <p>
+                    <strong>나파가죽시트/버킷리타일시트</strong><br />
+                    착촤 위치를 하향시키고, 시트백 볼스터와 허리지지대를 전동식으로<br />
+                    조절 가능하게 하여 퍼포먼스 주행에 최적화된 시트를 적용하였습니다.
+                </p>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!---------------- convenience ----------------->
+    <div id="con">
+
+        <div id="conwrap">
+            <div id="context">
+                <h2><em>CONVENLENCE</em></h2>
+                <p>
+                    <strong>최신 프리미엄 편의 사양으로 더욱 쾌적한 드라이빙 환경</strong><br />
+                    전자식 변속레버(SBW)와 전자식 파킹 브레이크(EPB) 기본화
+                </p>
+            </div>
+
+            <div class="conbox conbox01">
+                <p><img src="./image/convenience/01.jpg"></p>
+                <p>
+                    <strong>5가지의 주행모드 통합제어 시스템</strong> <br />
+                    운전자의 성향에 따라 선택 주행할 수 있으며, 모드별<br />
+                    서스펜션, 스티어링 휠, 변속 패턴을 달리 제어하여<br />
+                    최적의 주행감을 제공합니다.
+                </p>
+            </div>
+            <div class="conbox conbox02">
+                <p><img src="./image/convenience/02.jpg"></p>
+                <p>
+                    <strong>스마트 운전자세 시스템</strong><br />
+                    화면에 자신의 키, 몸무게, 앉은키 정보를 입력하면 해당 신체<br />
+                    조건에 최적화 된 운전석 시트 스타이어링 휠, 아웃사이드<br />
+                    미러 및 헤드업 디스플레이 위치를 추천해 드립니다.
+                </p>
+            </div>
+            <div class="conbox conbox03">
+                <p><img src="./image/convenience/03.jpg"></p>
+                <p>
+                    <strong>헤드업 디스플레이(HUD)</strong><br />
+                    윈드쉴드 글라스에 입체감 있는 그래픽과 다양한 주행정보를<br />
+                    투영시켜 보여줌으로써 운전자의 시선 이동을 최소화하여<br />
+                    안전한 운전을 도와 드립니다.
+                </p>
+            </div>
+            <div class="conbox conbox04">
+                <p><img src="./image/convenience/04.jpg"></p>
+                <p>
+                    <strong>렉시콘 프리미엄 사운드</strong><br />
+                    최고의 럭셔리 오디오 브랜드 렉시콘의 프리미엄 사운드를<br />
+                    15개의 아름다운 스피커로 들을 수 있습니다.
+                </p>
+            </div>
+            <div class="conbox conbox05">
+                <p><img src="./image/convenience/05.jpg"></p>
+                <p>
+                    <strong>전좌석 스마트 히티드 앞좌석 통풍 시트</strong><br />
+                    스마트 히티드 시트와 통풍시트로 동승자 까지<br />
+                    편안한 여행을 할 수 있도록 해줍니다.
+                </p>
+            </div>
+            <div class="conbox conbox06">
+                <p><img src="./image/convenience/06.jpg"></p>
+                <p>
+                    <strong>운전석 전동 익스텐션 시트</strong><br />
+                    운전자의 체형에 맞게 쿠션 길이를 조절할 수 있어<br />
+                    안락한 착좌감 제공합니다.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!---------------- safety ----------------->
+    <div id="safe">
+
+        <div id="safewrap">
+            <div id="safetext">
+                <h2><em>SAFETY</em></h2>
+                <p>
+                    최신 프리미엄 편의 사양으로 더욱 쾌적한 드라이빙 환경
+                </p>
+            </div>
+
+            <div id="safebtn">
+                <img src="./image/icon/btn_left.png">
+                <img src="./image/icon/btn_right.png">
+            </div>
+
+            <div id="safeboxmask">
+                <div id="safeboxwrap">
+                    <div>
+                        <img src="./image/safety/01.jpg">
+                        <p>
+                            <span>
+                                <strong>스마트 크루즈 컨트롤(SCC)</strong><br />
+                                정차 & 재출발, 고속도로 안전구간 자동감속
+                            </span>
+                        </p>
+                    </div>
+                    <div>
+                        <img src="./image/safety/02.jpg">
+                        <p>
+                            <span>
+                                <strong>전방 충돌방지 보조(FCA)</strong><br />
+                                전방 레이더와 전발 카메라에서 감지하는 신호를 종합적으로 판단하여 선행차량 및 보행자와의 충돌 위험 상황이<br />
+                                감지될 경우, 운전자에게 경고를 하고 필요시 브레이크 작동으로 운전자와 차량의 피해를 경감시켜 줍니다.
+                            </span>
+                        </p>
+                    </div>
+                    <div>
+                        <img src="./image/safety/03.jpg">
+                        <p>
+                            <span>
+                                <strong>하이빔 보조(HBA)</strong><br />
+                                주변의 조명 상황과 다른 차량의 광원을 자동으로 인식해<br />
+                                하이빔의 작동을 자동으로 ON/OFF 함으로써 야간 주행의 편의성을 높였습니다.
+                            </span>
+                        </p>
+                    </div>
+                    <div>
+                        <img src="./image/safety/04.jpg">
+                        <p>
+                            <span>
+                                <strong>차로 이탈방지 보조(LKA)</strong><br />
+                                방향 지시등 조작없이 차량이 차로를 이탈하려 할 경우, 클러스터에 경고하고,<br />
+                                차로 이탈을 방지하도록 스티어링 휠을 보조 합니다.
+                            </span>
+                        </p>
+                    </div>
+                    <div>
+                        <img src="./image/safety/05.jpg">
+                        <p>
+                            <span>
+                                <strong>후측방 충돌 경고(BCW)</strong><br />
+                                후측방 사각 지대 또는 고속으로 접근하는 차량을 인식,<br />
+                                운전자에게 경고해주는 예방 안전 시스템입니다.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="safesubbox">
+                <p><img class="on" src="./image/safety/01.jpg"></p>
+                <p><img src="./image/safety/02.jpg"></p>
+                <p><img src="./image/safety/03.jpg"></p>
+                <p><img src="./image/safety/04.jpg"></p>
+                <p><img src="./image/safety/05.jpg"></p>
+            </div>
+        </div>
+
+    </div>
+
+    <!---------------- purchase ----------------->
+    <div id="pur">
+
+        <h2><em>PURCHASE</em></h2>
+        <p>
+            FROM 차량 기본 가격<br />
+            <strong>35,050,000원</strong>
+        </p>
+        <p>
+            <a href="./info_pop.html"><img src="./image/icon/pur01.png"></a><br />
+        </p>
+        <p>
+            <a href="./pay.html"><img src="./image/icon/pur02.png"><br /></a>
+        </p>
+        <p><img src="./image/purchse/PNG.png"></p>
+        <p>시승 신청</p>
+        <p>견적 보기</p>
+
+    </div>
+
+    <!---------------- footer ----------------->
+    <footer>
+
+        <ul id="foot">
+            <li><em>CONTACT</em></li>
+            <li><em>KIA</em></li>
+        </ul>
+
+        <!-- sns -->
+        <ul id="footsns">
+            <li><img src="./image/icon/sns05.png"></li>
+            <li><img src="./image/icon/sns06.png"></li>
+            <li><img src="./image/icon/sns04.png"></li>
+        </ul>
+
+    </footer>
+
+
+
+</body>
+</html>

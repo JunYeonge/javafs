@@ -1,0 +1,33 @@
+/* container */
+/* snb */
+.snb .etc li{padding:15px 0 15px 20px; border-bottom:1px solid #d6d6d6;}
+.snb .etc li a{display:block; text-indent:9999px; overflow:hidden;}
+.snb .etc li.sitemap a{width:53px;height:14px; background:url(../images/snb_sitemap.png) no-repeat 0 0;}
+.snb .etc li.notice a{width:39px;height:12px; background:url(../images/snb_notice.png) no-repeat 0 0;}
+.snb .etc li.notice a:hover{background-position:0 -12px;}
+.snb .etc li.ask a{width:50px;height:14px; background:url(../images/snb_ask.png) no-repeat 0 0;}
+.snb .etc li.ask a:hover,.snb .etc li.sitemap a:hover{background-position:0 -14px;}
+.snb .recruit{padding:18px 0 22px 20px;}
+
+/* content */
+#sub_content h2{padding: 0 0 20px; border-bottom:1px solid #dcdcdc;}
+#sub_content h2 span{padding-left:13px; margin-left:18px; border-left:1px solid #dcdcdc; vertical-align: bottom;}
+
+/* 정보를 입력해주세요 */
+p.txt_please{padding:60px 0 20px; border-bottom: 1px solid #dcdcdc; margin-bottom:30px;}
+p.txt_please span{display:block; margin-left:520px;}
+
+/* 회원가입양식 */
+table{margin-bottom:40px; padding-left:70px; border-bottom:1px solid #dcdcdc;}
+th{padding-left:70px;}
+td{padding:10px 0 10px 10px;}
+input{height:28px; padding: 3px 10px 3px 15px; margin-right:12px; border:1px solid #b1b1b1;}
+select{height:36px; padding: 3px 10px 3px 15px; border:1px solid #b1b1b1; vertical-align:bottom;}
+.radio label{margin-right:45px;}
+.input_img{height:36px; padding:0; border:none;}
+td.birthday select{margin-right:20px;}
+p.min3{padding:10px 0;}
+p.info_txt{padding:28px 0 45px;}
+p.btn_next{margin-bottom:100px; text-align:center;}
+form .input_next{width:194px;height:46px; padding:0; border:none;}
+img.help{vertical-align:bottom;}

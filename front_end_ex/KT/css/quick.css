@@ -1,0 +1,4 @@
+/* 퀵메뉴 */
+div.quick{position:absolute;right:0; width:120px; height:400px; padding:10px 0; border:1px solid #cacaca; background:#fff;}
+ul.data_quick li{padding:10px 0; text-align:center;}
+ul.data_quick li.service_quick{margin-top:25px;}

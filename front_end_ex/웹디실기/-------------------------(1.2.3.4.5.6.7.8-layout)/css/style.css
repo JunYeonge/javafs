@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+* {margin: 0; padding: 0;}
+.fl {float: left;}
+
+#wrap {width: 1200px; margin: 0 auto;}
+#wrap header {width: 1200px; height: 100px;}
+#wrap header h1.logo {width: 200px; height: 100px; background: rgb(182, 207, 255);}
+#wrap header .menu {width: 1000px; height: 100px; background: rgb(139, 180, 255);}
+#wrap #center {width: 1200px; height: 500px;}
+#wrap #center .slide {width: 1200px; height: 300px; background: rgb(255, 208, 208);}
+#wrap #center .con {width: 1200px; height: 200px;}
+#wrap #center .con .ng {width: 400px; height: 200px; background: rgb(182, 207, 255);}
+#wrap #center .con .banner {width: 400px; height: 200px; background: rgb(139, 180, 255);}
+#wrap #center .con .banner2 {width: 400px; height: 200px; background: rgb(182, 207, 255);}
+#wrap footer {width: 1200px; height: 100px;}
+#wrap footer .blogo {width: 200px; height: 100px; background: rgb(139, 180, 255);}
+#wrap footer .mc {width: 1000px; height: 100px;}
+#wrap footer .mc .bmenu {width: 1000px; height: 50px; background: rgb(255, 208, 208);}
+#wrap footer .mc .copyright {width: 1000px; height: 50px; background: rgb(255, 163, 163);}

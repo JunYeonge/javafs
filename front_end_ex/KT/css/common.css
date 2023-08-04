@@ -1,0 +1,4 @@
+/* common */
+body{width:100%; font-size:12px; font-family:"맑은 고딕", Dotum,"돋움",Gulim,"굴림","Helvetica Neue",Helvetica,Arial,Verdana,Tahoma,sans-serif; text-align:center;}
+a{text-decoration:none; color:#888;}
+a:hover,a:active,a:focus{text-decoration:underline; color:#f00;}

@@ -1,0 +1,39 @@
+/* header */
+
+/* 로고 */
+#header h1.logo{position:absolute; left:0; top:46px;}
+
+/* 탑메뉴 */
+ul.topMenu1{float:left; }
+.topMenu1 li{float:left; padding:7px 9px 0 0; margin-right:9px; background:url(../images/bg_m_bar.gif) no-repeat 100% 70%;}
+
+.topMenu1 li a{display:block; height:12px; text-indent:-9999px; overflow:hidden;}
+.topMenu1 li.tMenu1 a{width:21px;background:url(../images/bg_top_menu1.png) no-repeat 0 -12px;}
+.topMenu1 li.tMenu2 a{width:20px;background:url(../images/bg_top_menu2.png) no-repeat 0 0;}
+.topMenu1 li.tMenu3 a{width:53px;background:url(../images/bg_top_menu3.png) no-repeat 0 0;}
+.topMenu1 li a:hover{background-position:0 -12px;}
+
+/* 로그인 */
+ul.topMenu2{float:right;}
+.topMenu2 li{float:left; padding:2px 9px 0 6px; background:url(../images/bg_m_bar.gif) no-repeat 98% 100%;}
+.topMenu2 li a{color:#666;}
+.topMenu2 li.last a{ padding-right:0; font-weight: bold;}/*탑메뉴 고객센터 메뉴사이드 bar가 없어지지 않아요 ㅠ_ㅠ*/
+.topMenu2 li a:hover{color:#f00;}
+
+/* 사이트 이용안내 */
+ul.site_guide li.img_guide a{display:block; width:144px; height:76px;background:url(../images/bg_main_gnb.png) no-repeat 0 0;}
+.site_guide li{float:left; margin:25px 0 0 60px;}
+.site_guide li a{display:block; text-indent:-9999px; overflow:hidden;}
+
+/* 주메뉴 */
+ul.gnb{position:absolute; left:364px; top:50px;}
+.gnb li{float:left; padding:5px 9px 0; background:url(../images/bg_m_bar.gif) no-repeat 100% 70%;}
+#header li.last{padding-right:0;}
+#header .gnb li.none{padding-right:0;}
+
+/* 올레 검색하기 */
+#header form.search{position:absolute; right:95px; top:46px; width:200px; height:40px;background:url(../images/bg_Top_Search.png) no-repeat 0 0;}
+.search .input_sta{width:140px; margin:5px 12px 5px 5px; padding:2px 2px 6px; border:none;}
+
+/* 전체메뉴 */
+p.totalMenu{position:absolute; right:0; top:46px; }

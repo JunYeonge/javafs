@@ -1,0 +1,47 @@
+/* bbs.css*/
+
+
+/* wrap */
+
+/* container */
+
+/* snb */
+div.snb h2.h_bold{padding: 0 0 15px 16px; border-bottom:2px solid #7d7d7d; font-weight:bold; font-size:20px;line-height:28px;}
+div.snb ul.nav{padding: 10px 0 10px 16px; border-bottom:1px solid #7d7d7d; }
+div.snb ul.nav li{font-size:14px;font-weight:bold; line-height:34px;}
+div.snb ul.nav li.snb_nav_color a{color:#f00;}
+ul.nav li a{color:#242215;}
+ul.nav li a:hover{color:#f00;} 
+
+/* content */
+
+/* path  */
+#content div.path{position:relative; width:771px; height:25px;}
+#content .path h2{float:left;}
+#content .path p{height:12px;padding:5px 20px 10px 0; float: right; font-size:11px;}
+#content .path p a{color:#666;}
+#content .path p a:hover{color:#df2428}
+#content .path p a.ico_home{ display:block; position:absolute; right:225px; top:10px; width:12px; height:10px; background:url(../images/olleh_icon_home.png) no-repeat 0 0; text-indent:-9999px; overflow:hidden;}
+
+/* 검색 */
+form.olleh_search{height:35px; padding:35px 0 0; border-top:1px solid #eee; vertical-align:middle;}
+form.olleh_search .site_list{float:left; margin:3px 4px 0 0;}
+form.olleh_search .noti_search{float:right;}
+form.olleh_search .noti_search .noti_input_size{padding:4px 50px; border:1px solid #cacaca; }
+
+/* 공지사항 게시판 */
+#content th{height:43px; border-top:1px solid #cacaca; border-bottom:1px solid #cacaca; background:#f9f9f9 url(../images/table_line_top.gif) repeat-x 0 0;text-align:center;}
+#content td{padding:19px 0 11px; border-bottom:1px solid #cacaca;color:#666;}
+#content table{text-align:center;}
+.table_title{text-align:left; }
+.table_title a{color:#000;padding-left:15px;}
+.table_title a:hover{color:#f00;}
+#content p.page_number{margin-top:30px; text-align:center;}
+#content p.page_number a{display:inline-block; width:23px; height:20px; padding-top:2px; margin-right:1px; border:1px solid #cacaca; text-align:center; color:#666;}
+#content p.page_number a.page_next{width:5px; height:9px;padding:7px 5px 6px;}
+#content p.page_number a.page_btn_red{background:red;}
+#content p.page_number a:hover{color:#f00;}
+#content p.page_number a.page_btn_red:hover{color:#fff;}
+
+
+

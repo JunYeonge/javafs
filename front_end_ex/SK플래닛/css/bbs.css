@@ -1,0 +1,31 @@
+/* container */
+/* snb */
+.snb .etc li{padding:15px 0 15px 20px; border-bottom:1px solid #d6d6d6;}
+.snb .etc li a{display:block; text-indent:9999px; overflow:hidden;}
+.snb .etc li.sitemap a{width:53px;height:14px; background:url(../images/snb_sitemap.png) no-repeat 0 0;}
+.snb .etc li.notice a{width:39px;height:12px; background:url(../images/snb_notice.png) no-repeat 0 0;}
+.snb .etc li.notice a:hover{background-position:0 -12px;}
+.snb .etc li.ask a{width:50px; height:14px; background:url(../images/snb_ask.png) no-repeat 0 0;}
+.snb .etc li.ask a:hover,.snb .etc li.sitemap a:hover{background-position:0 -14px;}
+.snb .etc li a.selected{background-position:0 -12px;}
+.snb .recruit{padding:18px 0 22px 20px;}
+
+/* content */
+p.path img{margin-right:6px;}
+p.path strong{color:#232323;}
+
+/* 공지사항 목록 */
+h3.Notice{padding:50px 0 37px; margin-bottom:30px; background:url(../images/bul_black_line.gif) no-repeat 0 100%;}
+table{border-top: 2px solid #232323; border-bottom: 2px solid #232323;}
+thead th{padding:16px; border-bottom: 1px solid #d7d7d7; color: #232323; font-size: 14px; text-align:center;}
+tbody td{border-bottom: 1px solid #d6d6d6; color: #777; line-height: 18px;padding:16px; text-align:center;}
+tbody td.txt{padding-left: 10px; font-size:14px;text-align: left;}
+tbody td.txt a{color:#232323;}
+p.page{padding:20px 0 30px; text-align:center;}
+p.page img{vertical-align:middle;}
+p.page a{padding-left:10px; vertical-align:middle;}
+p.page a.p_NO{padding-left:33px;}
+p.page .cur{padding-left:15px;font-weight:bold; text-decoration:underline; vertical-align:middle;}
+select.Notice_search{width:115px; height:35px; padding:3px 10px 3px 15px; margin-left:95px; border:1px solid #b1b1b1; color:#777; vertical-align:middle;}
+input.search_txt{width:305px; height:33px; margin:0 5px; border:1px solid #b1b1b1;}
+.search_section{margin-bottom:70px;}

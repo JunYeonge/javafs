@@ -1,0 +1,25 @@
+/* header */
+h1{float:left;margin:27px 0 0 28px;}
+
+/* 탑메뉴 */
+.topMenu{float:right;padding-right:33px;}
+.topMenu dd{float:left;}
+
+/* 통합검색 */
+.search{position:absolute;right:33px;top:40px;}
+.search dd{float:left;}
+.search dd form .srchBox{width:260px;height:23px;margin-left:27px;border:2px solid #4a94d3;}
+
+/* 주메뉴 */
+.gnb{z-index:30;position:absolute;left:85px;top:83px;}
+.gnb li{float:left;}
+.gnb li ul{position:absolute;display:none;width:140px;padding:0 5px;border-bottom:3px solid #185596;background:#4a94d4;}
+.gnb li ul.gnb_menu04{width:161px;}
+.gnb li ul.gnb_menu05{width:182px;}
+.gnb li ul li{border-bottom:1px solid #6eb1e6;}
+.gnb li ul li.last{border-bottom:none;}
+.gnb li ul li a{display:block;width:129px;height:27px;padding-left:10px;
+				color:#fff;font-weight:bold;text-decoration:none;line-height:26px;}
+.gnb li ul.gnb_menu04 li a{width:151px;padding-left:10px;}
+.gnb li ul.gnb_menu05 li a{width:172px;padding-left:10px;}
+.gnb li ul li a:hover{color:#fbf192;font-weight:bold;text-decoration:none;}
