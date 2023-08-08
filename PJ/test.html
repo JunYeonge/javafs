@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 웹툰</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* reset */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .section2_dr_wrap {
+            width: 850px;
+            height: 820px;
+        }
+
+        .section2_dr_wrap a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .section2_dr_wrap a:hover {
+            text-decoration: underline;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .section2_dr_wrap li {
+            width: 285px;
+        }
+
+        /* section new */
+        .section2_dr_new_f {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        /* section 공통 */
+
+        .section2_dr_title {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .section2 .section2_dr_pofl {
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        .section2_dr_atag {
+            width: 63px;
+            height: 30px;
+            background-color: #999;
+            margin-right: 8px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .section2_dr_atag:hover {
+            background-color: #666;
+        }
+
+        .section2_dr_aflex {
+            display: flex;
+        }
+
+        /* section2 윗 작업 */
+        .section2_dr {
+            height: 410px;
+        }
+
+        .section2_dr_img img {
+            width: 272px;
+            height: 165px;
+            background-color: aquamarine;
+            margin-bottom: 14px;
+            border-radius: 4px;
+        }
+
+        .section2_dr_atag a:hover {
+            text-decoration: none;
+        }
+
+        .section2_dr_tile {
+            margin-bottom: 6px;
+        }
+
+        .section2_dr_name {
+            margin-bottom: 6px;
+        }
+
+        .section2_dr_ti {
+            max-width: 200px;
+            height: 40px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 16px;
+        }
+
+        /* section2 밑 작업 */
+        .section2_dr_challenge {
+            height: 410px;
+        }
+
+        .section2_dr_mb {
+            margin-bottom: 16px;
+        }
+
+        .section2_dr_mideimg img {
+            width: 202px;
+            height: 164px;
+            background-color: aquamarine;
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+
+        .section2_dr_imgminisize img {
+            width: 107px;
+            height: 87px;
+            background-color: aquamarine;
+            border-radius: 4px;
+        }
+
+        .section2_dr_conwrap {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .section2_dr_colorimg {
+            width: 202px;
+            height: 164px;
+            display: block;
+            background-color: aquamarine;
+
+        }
+
+        .section2_dr_rig {
+            text-align: right;
+        }
+
+        .section2_dr_liflex li {
+            display: flex;
+        }
+
+        .section2_dr_flx {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section2_dr_wrapflex {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .section2_dr_ile {
+            /* white-space: nowrap;
+            overflow: hidden; */
+            text-overflow: ellipsis;
+            /* width: 250px;
+            height: 50px; */
+            max-width: 200px;
+            height: 40px;
+            /* 두 줄의 높이 설정 */
+            overflow: hidden;
+            /* text-overflow: ellipsis; */
+        }
+
+        .section2_dr_liflex {
+            display: flex;
+
+        }
+
+        .section2_dr_liflex:not(:nth-of-type(3)) {
+            margin-bottom: 5px;
+        }
+
+        .section2_dr_magb {
+            margin-bottom: 20px;
+        }
+
+        .section2_dr_mbm {
+            margin-bottom: 4px;
+        }
+
+        .section2_dr_mbd {
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section2_dr_wrap">
+
+        <div class="section2_dr">
+            <div class="section2_dr_new_f">
+                <div>
+                    <h3>이달의 신작</h3>
+                </div>
+                <div><a href="#">신작웹툰 더보기<i class="fa-sharp fa-solid fa-chevron-right fa-xs"></i></a></div>
+            </div>
+            <div class="section2_dr_wrapflex">
+                <ul class="section2_dr_mr">
+                    <li>
+                        <ul>
+                            <li>
+                                <div class="section2_dr_img"><a href="#"><img src="" alt=""></a></div>
+                            </li>
+                            <li>
+                                <div class="section2_dr_tile"><a href="#">작가 제목</a></div>
+                            </li>
+                            <li>
+                                <div class="section2_dr_name"><a href="">작가이름</a></div>
+                                <div class="section2_dr_ti"><a href="">2줄짜리 작품 설명입니다!!!</a></div>
+                                <div class="section2_dr_aflex">
+                                    <div class="section2_dr_atag"><a href="#">#장르</a></div>
+                                    <div class="section2_dr_atag"><a href="#">#액션</a></div>
+                                    <div class="section2_dr_atag"><a href="#">#보내줘</a></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+                <ul class="section2_dr_mr">
+                    <li>
+                        <ul>
+                            <li>
+                                <div class="section2_dr_img"><a href="#"><img src="" alt=""></a></div>
+                            </li>
+                            <li>
+                                <div class="section2_dr_tile"><a href="#">작가 제목</a></div>
+                            </li>
+                            <li>
+                                <div class="section2_dr_name"><a href="">작가이름</a></div>
+                                <div class="section2_dr_ti"><a href="">2줄짜리 작품 설명입니다!!!</a></div>
+                                <div class="section2_dr_aflex">
+                                    <div class="section2_dr_atag"><a href="#">#장르</a></div>
+                                    <div class="section2_dr_atag"><a href="#">#액션</a></div>
+                                    <div class="section2_dr_atag"><a href="#">#보내줘</a></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="section2_dr_mr">
+                    <li>
+                        <ul>
+                            <li>
+                                <div class="section2_dr_img"><a href="#"><img src="" alt=""></a></div>
+                            </li>
+                            <li>
+                                <div class="section2_dr_tile"><a href="#">작가 제목</a></div>
+                            </li>
+                            <li>
+                                <div class="section2_dr_name"><a href="">작가이름</a></div>
+                                <div class="section2_dr_ti"><a href="">2줄짜리 작품 설명입니다!!!</a></div>
+                                <div class="section2_dr_aflex">
+                                    <div class="section2_dr_atag"><a href="#">#장르</a></div>
+                                    <div class="section2_dr_atag"><a href="#">#액션</a></div>
+                                    <div class="section2_dr_atag"><a href="#">#보내줘</a></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="section2_dr_challenge">
+            <div class="section2_dr_wrapflex">
+                <ul>
+                    <li>
+                        <div class="section2_dr_mb">
+                            <h3>새로운 베스트 도전</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="section2_dr_mideimg"><a href="#"><img src="" alt=""></a></div>
+                            </li>
+                            <li>
+                                <div class="section2_dr_mbd"><a href="#">작가 제목</a></div>
+                            </li>
+                            <li>
+                                <div class="section2_dr_mbd"><a href="">작가이름</a></div>
+                            </li>
+                            <li>
+                                <div class="section2_dr_ile"><a href="">여긴 2줄짜리 작품 설명
+                                        입니다.하지만 지금은 집에 넘 ㅜ가고싶고 너무 졸리고롤도 하고싶습니ㅏㄷ</a></div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <div class="section2_dr_mb">
+                            <h3>추천 베스트도전&도전만화</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="section2_dr_liflex">
+                                    <div class="section2_dr_imgminisize"><a href="#"><img src="" alt=""></a></div>
+                                    <div>
+                                        <div class="section2_dr_mbm">
+                                            <a href="#">제목입니다.</a>
+                                        </div>
+                                        <div class="section2_dr_magb">
+                                            <a href="#">작가입니다.</a>
+                                        </div>
+                                        <span>★1.0(별점)</span>
+                                        <span>※100(조회)</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="section2_dr_liflex">
+                                    <div class="section2_dr_imgminisize"><a href="#"><img src="" alt=""></a></div>
+                                    <div>
+                                        <div class="section2_dr_mbm">
+                                            <a href="#">제목입니다.</a>
+                                        </div>
+                                        <div class="section2_dr_magb">
+                                            <a href="#">작가입니다.</a>
+                                        </div>
+                                        <span>★1.0(별점)</span>
+                                        <span>※100(조회)</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="section2_dr_liflex">
+                                    <div class="section2_dr_imgminisize"><a href="#"><img src="" alt=""></a></div>
+                                    <div>
+                                        <div class="section2_dr_mbm">
+                                            <a href="#">제목입니다.</a>
+                                        </div>
+                                        <div class="section2_dr_magb">
+                                            <a href="#">작가입니다.</a>
+                                        </div>
+                                        <span>★1.0(별점)</span>
+                                        <span>※100(조회)</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <div class="section2_dr_rig section2_dr_mb"><a href="#">베스트도전 전체보기<i
+                                    class="fa-sharp fa-solid fa-chevron-right fa-xs"> </i></a> </div>
+                        <ul>
+                            <li>
+                                <div class="section2_dr_liflex">
+                                    <div class="section2_dr_imgminisize"><a href="#"><img src="" alt=""></a></div>
+                                    <div>
+                                        <div class="section2_dr_mbm">
+                                            <a href="#">제목입니다.</a>
+                                        </div>
+                                        <div class="section2_dr_magb">
+                                            <a href="#">작가입니다.</a>
+                                        </div>
+                                        <span>★1.0(별점)</span>
+                                        <span>※100(조회)</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="section2_dr_liflex">
+                                    <div class="section2_dr_imgminisize"><a href="#"><img src="" alt=""></a></div>
+                                    <div>
+                                        <div class="section2_dr_mbm">
+                                            <a href="#">제목입니다.</a>
+                                        </div>
+                                        <div class="section2_dr_magb">
+                                            <a href="#">작가입니다.</a>
+                                        </div>
+                                        <span>★1.0(별점)</span>
+                                        <span>※100(조회)</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="section2_dr_liflex">
+                                    <div class="section2_dr_imgminisize"><a href="#"><img src="" alt=""></a></div>
+                                    <div>
+                                        <div class="section2_dr_mbm">
+                                            <a href="#">제목입니다.</a>
+                                        </div>
+                                        <div class="section2_dr_magb">
+                                            <a href="#">작가입니다.</a>
+                                        </div>
+                                        <span>★1.0(별점)</span>
+                                        <span>※100(조회)</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

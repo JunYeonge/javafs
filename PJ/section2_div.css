@@ -1,0 +1,68 @@
+/* reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.section2_wrap {
+    width: 850px;
+    height: 760px;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* section 공통 */
+
+.section2_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section2 .section2_pofl {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 32px;
+}
+
+.section2_pofl>li:not(:nth-of-type(3)) {
+    margin-right: 8px;
+
+}
+
+.section2 ul li img {
+    width: 272px;
+    height: 165px;
+    display: block;
+    background-color: aquamarine;
+}
+
+/* section2 밑 작업 */
+.section2_conwrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section2_colorimg {
+    width: 202px;
+    height: 164px;
+    display: block;
+    background-color: aquamarine;
+    margin-bottom: 8px;
+    /* 지우고 웹툰 제목쪽에 padding-top : 8px 주기 */
+}
+
+.section2_flx {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section2_wrapflex {
+    display: flex;
+    justify-content: space-between;
+}
