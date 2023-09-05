@@ -24,7 +24,7 @@ const SectionTitleStyle = styled.div`
   }
 `;
 
-export default function SelectionTitle({
+export default function SectionTitle({
   subheading = 'Need Subheading',
   heading = 'need heading',
 }) {
