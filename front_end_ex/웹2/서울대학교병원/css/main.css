@@ -1,0 +1,51 @@
+/* sta */
+
+/* 로그인 */
+.membership{float:left;padding-left:30px;}
+.membership .input_id{width:137px;height:23px;border:2px solid #4a94d3;}
+.membership .input_pw{width:137px;height:23px;border:2px solid #b7b7b7;}
+.membership p{position:absolute;left:409px;top:18px;}
+
+/* 기타메뉴 */
+.etc{float:right;padding-right:53px;}
+.etc li{float:left;}
+
+/* 퀵메뉴 */
+.quickmenu ul{position:absolute;left:35px;top:120px;height:251px;}
+.quickmenu ul li{float:left;margin:0 36px 30px 0;}
+.quickmenu div.tel{position:absolute;left:0;bottom:0;width:100%;height:33px;
+				background:url(../images/tell2.png) no-repeat 50% 50%;text-indent:-9999px;overflow:hidden;}
+
+/* container */
+
+/* content1 */
+
+/* 공지사항 */
+.notice{position:relative;width:464px;height:132px;margin-bottom:23px;
+		background:url(../images/bg_notice.png) repeat-x 0 0;}
+.notice dt{float:left;}
+.notice dd{position:absolute;left:0;top:30px;width:464px;line-height:20px;}
+.notice dd ul li{padding-left:8px;background:url(../images/bu_point.gif) no-repeat 0 50%;}
+.notice dd span{float:right;font-size:11px;color:#999;}
+.notice dd a:hover{text-decoration:underline;color:#4a94d4;}
+.notice dd p.more{position:absolute;right:3px;top:-30px;}
+
+/* 배너1 */
+
+/* content2 */
+
+/* 롤링배너 */
+.rolling_banner{position:relative;height:132px;padding-bottom:30px;}
+.rolling_banner h3{float:left;padding-left:10px;}
+.rolling_banner dl{float:right;}
+.rolling_banner dl dt{float:left;position:relative;right:0;top:0;}
+.rolling_banner dl dd{position:absolute;left:0;top:40px;width:400px;padding-left:10px;}
+
+/* 배너2 */
+.banner2 ul{float:left;width:170px;margin-right:5px;} 
+.banner2 .story{position:relative;float:left;width:228px;height:176px;
+				background:url(../images/ad_snuhtalk.png) no-repeat 0 0;}
+.banner2 .story li a{position:absolute;left:0;top:0;width:230px;text-indent:-9999px;overflow:hidden;}
+.banner2 .story .podcast a{top:0;width:230px;height:110px;}
+.banner2 .story .magazine a{top:117px;;width:230px;height:60px;}
+
